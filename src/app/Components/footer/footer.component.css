@@ -1,4 +1,11 @@
-
+.footer{
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+   
+}
 
 
 .row{
@@ -6,5 +13,5 @@
     margin: 0% !important;
 }
 .dark-text{
-    color: gray;
+    color: white;
 }
