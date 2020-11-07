@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { UserService } from '../../Services/user.service'
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -9,7 +11,8 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService
     ) {
       this.validator()
      }
@@ -26,17 +29,26 @@ export class SignUpComponent implements OnInit {
       cellPhone:['',Validators.required],
       userName: ['', Validators.required],
       password: ['', [Validators.required,Validators.minLength(6)]],
-      role: ['User', Validators.required],
-      birthDate: [''],
-      status: ['']
+      role: ['Voluntario', Validators.required],
+      status: [true]
 
     })
   }
-  saveUser(){
-    if(this.signUpForm.valid){
-      alert('Se va a guardar la informacion')
-    }else{
-      alert('El formulario no es válido')
+  saveUser() {
+    if (this.signUpForm.valid) {
+      console.log(this.signUpForm.value)
+     this.userService.createUser(this.signUpForm.value).subscribe(
+        (userCreated) => {
+
+          console.log(userCreated)
+          alert('Usuario creado correctamente')
+
+        }, (error) => {
+          console.error('Tuvimos un errror ->', error)
+        }
+      ) 
+    } else {
+      alert('El formulario no es valido')
     }
   }
 }
