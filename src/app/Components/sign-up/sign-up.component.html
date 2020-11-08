@@ -1,45 +1,38 @@
 <div class="container rounded-sm color">
     <div class="container-div">
         <h1>Completa tus datos</h1>
-        <form [formGroup]="signUpForm" (ngsubmit)="saveUser()">
+        <form [formGroup]="signUpForm" (ngSubmit)="saveUser()">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-
-                    <input formControlName="name" type="text" class="form-control" id="validationDefault01" placeholder="Nombre" required>
+                    <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nombre">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input formControlName="lastName"  type="text" class="form-control" id="validationDefault02" placeholder="Apellido"
-                        required>
+                    <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Apellido">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-
-                    <input formControlName="email" type="email" class="form-control" id="validationDefault01" placeholder="Correo" required>
-                    <p *ngIf="signUpForm.get('email').hasError('email')" class="errorMessage">El correo electronico es incorrecto</p>
+                    <input formControlName="email" type="email" class="form-control" id="email" placeholder="Correo">
+                    <p *ngIf="signUpForm.get('email').hasError('email')" class="errorMessage">El correo electrónico es incorrecto</p>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input formControlName="city"  type="text" class="form-control" id="validationDefault02" placeholder="Ciudad"
-                        required>
+                    <input formControlName="city"  type="text" class="form-control" id="city" placeholder="Ciudad">
                 </div>
             </div>            
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-                    <input formControlName="cellPhone" type="text" class="form-control" id="validationDefault03" placeholder="Telefono" required>
+                    <input formControlName="cellPhone" type="text" class="form-control" id="cellPhone" placeholder="Teléfono">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <input formControlName="userName" type="text" class="form-control" id="validationDefault04" placeholder="Nombre de usuario"
-                        required>
+                    <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Nombre de usuario">
                 </div>
-
             </div>
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-                    <input formControlName="password" type="password" class="form-control" id="validationDefault06" placeholder="Contraseña" required>
-                    <p *ngIf="signUpForm.get('password').hasError('minlength')" class="errorMessage">La contraseña debe ser mayor a 6 caracteres</p>
+                    <input formControlName="password" type="password" class="form-control" id="password" placeholder="Contraseña">
+                    <p *ngIf="signUpForm.get('password').hasError('minlength')" class="errorMessage">La contraseña debe ser mayor a 6 carácteres</p>
                 </div>
             </div>
-
             <button class="btn btn-info">Registrar</button>
         </form>
     </div>
