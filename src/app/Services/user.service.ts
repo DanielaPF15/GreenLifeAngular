@@ -14,5 +14,9 @@ export class UserService {
   createUser(formData){
     return this.http.post<User>(`${this.apiURL}/user/create`, formData)
   }
+
+  login(formData){
+    return this.http.post<User>(`${this.apiURL}/login`, formData)
+  }
 }
 
