@@ -11,11 +11,16 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
+import { CreateProjectComponent } from './Components/create-project/create-project.component';
+import { ListProjectComponent } from './Components/list-project/list-project.component';
+import { AuthGuard} from './Guards/auth.guard';
 
 const routesApp: Routes = [
   {path: '', component: HomeComponent },
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'login' , component: LoginComponent}
+  {path: 'login' , component: LoginComponent},
+  {path: 'create-project',canActivate: [AuthGuard], data:{only: 'Admin'}, component: CreateProjectComponent},
+  {path: 'list-project',canActivate: [AuthGuard], component:ListProjectComponent}
 ]
 
 @NgModule({
@@ -25,7 +30,9 @@ const routesApp: Routes = [
     FooterComponent,
     HomeComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    CreateProjectComponent,
+    ListProjectComponent
   ],
   imports: [
     BrowserModule,

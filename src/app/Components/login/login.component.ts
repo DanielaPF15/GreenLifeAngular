@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'; //Validar los formularios
+import { Router } from '@angular/router';
 import { UserService } from '../../Services/user.service';
+import { StorageService } from '../../Services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +12,13 @@ import { UserService } from '../../Services/user.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private StorageService: StorageService,
+    private Router: Router,
+
   ) { this.validator() }
 
   ngOnInit(): void {
@@ -29,7 +35,13 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.userService.login(this.loginForm.value).subscribe(
         (dataUser) =>{
-          console.log(dataUser['token'])
+          this.StorageService.saveToken(dataUser['token'])
+          const infoUser = this.StorageService.dataUser()
+          if(infoUser.role == 'Admin'){
+            this.Router.navigate(['/create-project'])
+            }else{
+              this.Router.navigate(['/list-project'])
+            }
         },
         (error) =>{
           console.log('Error --->', error)
