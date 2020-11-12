@@ -1,20 +1,21 @@
+<div class="container text-center">
+    <!--<video src="./Videos/fondo.mp4" mute autoplay loop>
+    </video>-->
+<div class="container-div estilos-contenedor">
+    <h1>Iniciar sesion</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-row">
+            <input formControlName="userName" type="text" class="form-control"
+                id="userName" placeholder="Nombre Usuario">
+        </div>
+        <div class="form-row">
 
-<div class="container">
-<h1>Iniciar sesion</h1>
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-<div class="form-row">
-    <label>Nombre Usuario
-    </label>
-    <input formControlName= "userName" type= "text" class="form-control" id="userName">
+            <input formControlName="password" type="password"
+                class="form-control" id="password" placeholder="Contraseña">
+                   <a class="olvidoContra" routerLink=""><span>¿Olvidaste tu contraseña?</span></a>
+        </div>
 
+        <button class="btn  btn-lg btn-success text-center">Iniciar sesión</button>
+    </form>
 </div>
-<div class="form-row">
-    <label>Contraseña
-    </label>
-    <input formControlName= "password" type= "password" class="form-control" id="password">
-
-</div>
-
-<button class="btn btn-info">Iniciar SEsion</button>
-</form>
 </div>
