@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private StorageService: StorageService,
-    private Router: Router,
+    private router: Router,
 
   ) { this.validator() }
 
@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
           this.StorageService.saveToken(dataUser['token'])
           const infoUser = this.StorageService.dataUser()
           if(infoUser.role == 'Admin'){
-            this.Router.navigate(['/create-project'])
+            this.router.navigate(['/create-project'])
             }else{
-              this.Router.navigate(['/list-project'])
+              this.router.navigate(['/list-project'])
             }
         },
         (error) =>{
