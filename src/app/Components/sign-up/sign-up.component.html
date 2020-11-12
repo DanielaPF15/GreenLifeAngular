@@ -1,39 +1,41 @@
 <div class="container rounded-sm color">
-    <div class="container-div">
-        <h1>Completa tus datos</h1>
+    <div class="container-fluid">
+        <h1 class="text-center">Completa tus datos</h1>
         <form [formGroup]="signUpForm" (ngSubmit)="saveUser()">
             <div class="form-row">
-                <div class="col-md-6 mb-3">
+                <div class="col-12 mb-3">
                     <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nombre">
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-12 mb-3">
                     <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Apellido">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
+           
+         
+                <div class="col-12 mb-3">
                     <input formControlName="email" type="email" class="form-control" id="email" placeholder="Correo">
                     <p *ngIf="signUpForm.get('email').hasError('email')" class="errorMessage">El correo electrónico es incorrecto</p>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-12 mb-3">
                     <input formControlName="city"  type="text" class="form-control" id="city" placeholder="Ciudad">
                 </div>
-            </div>            
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
+                   
+            
+                <div class="col-12 mb-3">
                     <input formControlName="cellPhone" type="text" class="form-control" id="cellPhone" placeholder="Teléfono">
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-12 mb-3">
                     <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Nombre de usuario">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
+            
+                <div class="col-12 mb-3">
                     <input formControlName="password" type="password" class="form-control" id="password" placeholder="Contraseña">
                     <p *ngIf="signUpForm.get('password').hasError('minlength')" class="errorMessage">La contraseña debe ser mayor a 6 carácteres</p>
                 </div>
             </div>
-            <button class="btn btn-info">Registrar</button>
+            <div class="text-center">
+                <button class="btn btn-lg btn-info">Crear cuenta</button>
+            </div>
+            
         </form>
     </div>
 </div>
