@@ -5,3 +5,8 @@
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 }
+
+
+.close-icon{
+    cursor: pointer;
+}
