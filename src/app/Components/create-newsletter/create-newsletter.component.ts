@@ -36,7 +36,7 @@ export class CreateNewsletterComponent implements OnInit {
     if(this.createNewsletterForm.valid){
       this.newsletterService.createNewsletter(this.createNewsletterForm.value).subscribe(
         (newslettercreated)=>{
-          alert('El Proyecto se creo correctamente')
+          alert('La publicacion se creo correctamente')
         }, (error)=>{
           console.error('Error', error)
 

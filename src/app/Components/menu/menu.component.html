@@ -41,13 +41,10 @@
           <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Publicaciones</a>
+          <a class="nav-link" routerLink="/create-newsletter">Publicar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/">Voluntarios-usuarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Donaciones</a>
+          <a class="nav-link" routerLink="">Lista de usuarios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
@@ -55,9 +52,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Publicar</a>
-        </li>
+       
       </ul>
       <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
       <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
