@@ -16,6 +16,7 @@ import { ListProjectComponent } from './Components/list-project/list-project.com
 import { CreateDonationComponent } from './Components/create-donation/create-donation.component';
 import { AuthGuard} from './Guards/auth.guard';
 import { CreateCategoryComponent } from './Components/create-category/create-category.component';
+import { CreateNewsletterComponent } from './Components/create-newsletter/create-newsletter.component';
 
 
 const routesApp: Routes = [
@@ -26,7 +27,10 @@ const routesApp: Routes = [
   {path: 'list-project',canActivate: [AuthGuard], component:ListProjectComponent},
   {path: 'create-donation',canActivate: [AuthGuard], data:{only: 'Voluntario'}, component:CreateDonationComponent},
   { path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
+  { path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
+
 ]
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ const routesApp: Routes = [
     CreateProjectComponent,
     ListProjectComponent,
     CreateDonationComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    CreateNewsletterComponent
   ],
   imports: [
     BrowserModule,

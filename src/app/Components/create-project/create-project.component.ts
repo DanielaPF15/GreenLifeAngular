@@ -15,7 +15,7 @@ export class CreateProjectComponent implements OnInit {
   categoryProject: Array<any> = []
 
   constructor(
-    private fromBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private categoryService: CategoryService,
     private projectService: ProjectService
   ) {
@@ -27,7 +27,7 @@ export class CreateProjectComponent implements OnInit {
   }
 
   validator(){
-    this.createProjectForm= this.fromBuilder.group({
+    this.createProjectForm= this.formBuilder.group({
     name: ['', Validators.required],
     theme: ['', Validators.required],
     description: [''],
