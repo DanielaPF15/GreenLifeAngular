@@ -30,10 +30,10 @@ const routesApp: Routes = [
   {path: 'list-project', canActivate: [AuthGuard], component:ListProjectComponent},
   {path: 'create-donation', canActivate: [AuthGuard], data:{only: 'Voluntario'}, component:CreateDonationComponent},
   {path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
-  {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent }
+  {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent },
   {path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
 
-
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ const routesApp: Routes = [
     ListProjectComponent,
     CreateDonationComponent,
     CreateCategoryComponent,
-    CreateExperiencesComponent
+    CreateExperiencesComponent,
     CreateNewsletterComponent
 
   ],
