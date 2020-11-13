@@ -1,1 +1,66 @@
-<p>create-project works!</p>
+<div class="container" >
+    <h1>Crear Proyectos</h1>
+    <form [formGroup]="createProjectForm" (ngSubmit)="saveProject()" >
+
+        <div class="form-row" >
+            <div class="form-group col-md-6">
+              
+              <input formControlName="name" id="name" type="text" class="form-control" placeholder="Nombre Proyecto">
+            </div>
+            <div class="form-group col-md-6" >
+             
+              <input formControlName="theme" id="theme" type="text" class="form-control" placeholder="Tema">
+            </div>
+        </div>
+
+        <div class="form-row" >
+            <div class="form-group col-md-6" >
+              
+              <input formControlName="description" id="description" type="text" class="form-control" placeholder="Descripción">
+            </div>
+            <div class="form-group col-md-6" >
+             
+              <input formControlName="city" id="city" type="text" class="form-control" placeholder="Ciudad" >
+            </div>
+        </div>
+
+        <div class="form-row" >
+            <div class="form-group col-md-12" >
+            
+              <input formControlName="address" id="address" type="text" class="form-control"placeholder="Dirección" >
+            </div>
+        </div>
+        <div class="form-row" >
+            <div class="form-group col-md-12" >
+            <label>Fecha de inicio</label>
+              <input formControlName="startDate" id="startDate" type="date" class="form-control">
+            </div>
+        </div>
+        <div class="form-row" >
+            <div class="form-group col-md-12" >
+            <label>Fecha de fin</label>
+              <input formControlName="endDate" id="endDate" type="date" class="form-control">
+            </div>
+        </div>
+        <div class="form-row" >
+            <div class="form-group col-md-12" >
+              <input formControlName="totalPeople" id="totalPeople" type="text" class="form-control"placeholder="Total de personas" >
+            </div>
+        </div>
+
+        <div class="form-row" >
+            <div class="form-group col-md-12" >
+                <label>Categoria del proyecto</label>
+                <input formControlName="category" id="category" class="form-control" type="hidden">
+                <div class="row">
+                    <div class="col" *ngFor="let c of allCategory" >
+                        <input type="checkbox" value="{{c._id}}" (click) = "saveCategory($event)"  >
+                        <label>{{c.name}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-info">Guardar proyecto</button>
+
+    </form>
+</div>
