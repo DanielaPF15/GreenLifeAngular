@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { DonationService } from '../../Services/donation.service'; 
-import { StorageService } from '../../Services/storage.service';
+import { DonationService } from '../../Services/donation.service';
 
 @Component({
   selector: 'app-create-donation',
@@ -11,27 +9,39 @@ import { StorageService } from '../../Services/storage.service';
 })
 export class CreateDonationComponent implements OnInit {
 
-  donationForm: FormGroup;
+  createDonationForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: DonationService,
-    private StorageService: StorageService,
-    private router: Router,
+    private donationService: DonationService,
   ) { this.validator() }
 
   ngOnInit(): void {
   }
 
-  validator(){
-    this.donationForm = this.formBuilder.group({
-      entity: ['', Validators.required],
-      project: ['', Validators.required],
-      user: ['', Validators.required],
-      description: ['', Validators.required],
+  validator() {
+    this.createDonationForm = this.formBuilder.group({
+      entity: [''],
+      project: ['5f9898856abe9a50141cbea9', Validators.required],
+      user: ['5f9898856abe9a50141cbea9'],
+      description: [''],
       value: ['', Validators.required],
       paymentSupport: ['', Validators.required]
     })
+  }
+
+  saveDonation(){
+    if(this.createDonationForm.valid){
+      this.donationService.createDonation(this.createDonationForm.value).subscribe(
+        (donationCreated) =>{
+          alert('La donación se registró correctamente')
+        }, (error) =>{
+          console.error('Error', error)
+        }
+      )
+    }else{
+      alert('Todos los campos deben estar llenos')
+    }
   }
 
 }
