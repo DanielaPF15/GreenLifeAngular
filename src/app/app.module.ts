@@ -16,20 +16,22 @@ import { ListProjectComponent } from './Components/list-project/list-project.com
 import { CreateDonationComponent } from './Components/create-donation/create-donation.component';
 import { AuthGuard} from './Guards/auth.guard';
 import { CreateCategoryComponent } from './Components/create-category/create-category.component';
+import { CreateExperiencesComponent } from './Components/create-experiences/create-experiences.component';
 import { CreateNewsletterComponent } from './Components/create-newsletter/create-newsletter.component';
+
 
 
 const routesApp: Routes = [
   {path: '', component: HomeComponent },
   {path: 'sign-up', component: SignUpComponent},
   {path: 'login' , component: LoginComponent},
-  {path: 'create-project',canActivate: [AuthGuard], component: CreateProjectComponent},
-  {path: 'list-project',canActivate: [AuthGuard], component:ListProjectComponent},
-  {path: 'create-donation',canActivate: [AuthGuard], data:{only: 'Voluntario'}, component:CreateDonationComponent},
-  { path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
-  { path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
-
-]
+  
+  {path: 'create-project', canActivate: [AuthGuard], component: CreateProjectComponent},
+  {path: 'list-project', canActivate: [AuthGuard], component:ListProjectComponent},
+  {path: 'create-donation', canActivate: [AuthGuard], data:{only: 'Voluntario'}, component:CreateDonationComponent},
+  {path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
+  {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent }
+  {path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
 
 
 @NgModule({
@@ -44,7 +46,9 @@ const routesApp: Routes = [
     ListProjectComponent,
     CreateDonationComponent,
     CreateCategoryComponent,
+    CreateExperiencesComponent
     CreateNewsletterComponent
+
   ],
   imports: [
     BrowserModule,
