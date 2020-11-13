@@ -1,70 +1,66 @@
 <div *ngIf="!user">
-  
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">¿Quienes somos?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Boletin informativo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sign-up">Crear cuenta</a>
-        </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">¿Quienes somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Boletin informativo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/sign-up">Crear cuenta</a>
+                </li>
 
-      </ul>
-    </div>
-  </nav>
+            </ul>
+        </div>
+    </nav>
 </div>
 
 
 <div *ngIf="user && user.role == 'Admin'">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Publicaciones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Voluntarios-usuarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Donaciones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
-        </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Publicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Voluntarios-usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Donaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
+                </li>
 
-      </ul>
-      <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
-      <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
-    </div>
-  </nav>
+            </ul>
+            <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
+            <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
+        </div>
+    </nav>
 
 </div>
 
@@ -72,32 +68,33 @@
 
 
 <div *ngIf="user && user.role == 'Voluntario'">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Boletin Informativo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-donation">Donaciones</a>
-        </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Boletin Informativo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-experiences">Crear Experiencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-donation">Donaciones</a>
+                </li>
 
-      </ul>
-      <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
-      <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
-    </div>
-  </nav>
+            </ul>
+            <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
+            <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
+        </div>
+    </nav>
 
 </div>
