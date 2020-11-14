@@ -1,0 +1,37 @@
+
+.listaUsers{
+    background-color: rgb(130, 207, 238);
+}
+
+
+.list-group{
+    border-radius: 4px !important;
+}
+
+
+.container h1{
+text-align: center;
+width: 60%;
+margin-left: 20%;
+margin-right: 20%;
+margin-bottom: 30px;
+margin-top: 25px;
+border-bottom: rgb(11, 158, 11) 2px solid;
+font-family: cursive;
+}
+
+
+.modificar-enlace{
+    color:white;
+    text-decoration: none;
+
+}
+
+.listaUsers button{
+    margin-top: 10px;
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
