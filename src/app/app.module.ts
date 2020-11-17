@@ -58,7 +58,7 @@ const routesApp: Routes = [
     CreateExperiencesComponent,
     CreateNewsletterComponent,
     ListDonationComponent,
-    UpdateDonationComponent
+    UpdateDonationComponent,
     ListNewsletterComponent,
     ListUserComponent,
     UpdateUserComponent

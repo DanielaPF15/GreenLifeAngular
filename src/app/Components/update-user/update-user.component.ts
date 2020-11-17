@@ -43,7 +43,7 @@ export class UpdateUserComponent implements OnInit {
     if (this.createUserForm.valid){
       this.userService.updateUser(this.createUserForm.value, this.idUser).subscribe(
         (usercreated) => {
-          alert('El libro se modificó correctamente')
+          alert('El usuario se modificó correctamente')
           this.route.navigate(['/'])
         },
         (error) => {
