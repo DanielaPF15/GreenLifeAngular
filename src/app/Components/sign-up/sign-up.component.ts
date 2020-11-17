@@ -50,4 +50,5 @@ export class SignUpComponent implements OnInit {
       alert('El formulario no es valido')
     }
   }
+
 }

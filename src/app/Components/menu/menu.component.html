@@ -44,17 +44,17 @@
           <a class="nav-link" routerLink="/create-newsletter">Publicar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Lista de usuarios</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/list-user">Lista Usuarios</a>
+        </li>
        
       </ul>
-      <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
+      <span class="navbar-text"> <b>Bienvenido a Greenlife {{user.name}}!</b> </span>
       <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
     </div>
   </nav>
@@ -88,7 +88,7 @@
                 </li>
 
             </ul>
-            <span class="navbar-text"> <b>Hola {{user.name}}</b> </span>
+            <span class="navbar-text"> <b>Bienvenido a Greenlife {{user.name}}!</b> </span>
             <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
         </div>
     </nav>

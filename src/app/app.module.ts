@@ -18,6 +18,8 @@ import { AuthGuard} from './Guards/auth.guard';
 import { CreateCategoryComponent } from './Components/create-category/create-category.component';
 import { CreateExperiencesComponent } from './Components/create-experiences/create-experiences.component';
 import { CreateNewsletterComponent } from './Components/create-newsletter/create-newsletter.component';
+import { ListUserComponent } from './Components/list-user/list-user.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 
 
@@ -32,6 +34,8 @@ const routesApp: Routes = [
   {path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
   {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent },
   {path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
+  {path: 'list-user' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: ListUserComponent},
+  {path: 'update-user/:id' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: UpdateUserComponent},
 
 ]
 @NgModule({
@@ -47,7 +51,9 @@ const routesApp: Routes = [
     CreateDonationComponent,
     CreateCategoryComponent,
     CreateExperiencesComponent,
-    CreateNewsletterComponent
+    CreateNewsletterComponent,
+    ListUserComponent,
+    UpdateUserComponent
 
   ],
   imports: [
