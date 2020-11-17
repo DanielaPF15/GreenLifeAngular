@@ -1,0 +1,31 @@
+<div class="container p-2 mt-4 mb-4" style="background-color: rgb(255, 255, 255);">
+    <h2 class="text-align-center col-12 p-3">Proyectos</h2>
+
+    <div class="row">
+        <div class="col mb-4" *ngFor="let n of allnewsletter">
+            <div class="card" style="width: 18rem;"  >
+                <div class="card-body">
+                  <h5 class="card-title">{{n.title}}</h5>
+                  
+                    <img class="img-card" src="assets/images/tapas.jpg">
+                  
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Descripción: </b> {{n.desciption}} </li>
+                    <li class="list-group-item"><b>Fecha: </b> {{n.date}} </li>
+                    <li class="list-group-item"><b>Estado: </b> {{n.status}} </li>
+                  </ul>
+                  <a class="btn btn-secondary">Eliminar</a>
+                  <a class="btn btn-primary">Publicar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body bg-info">
+                    <p class="card-text">Realiza una nueva publicación</p>
+                    <a href="/create-newsletter" class="btn btn-success">Nueva publicación</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

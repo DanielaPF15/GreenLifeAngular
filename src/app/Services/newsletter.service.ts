@@ -16,4 +16,7 @@ export class NewsletterService {
   createNewsletter(formData){
     return this.http.post<Newsletter>(`${this.apiURL}/newsletters/create`, formData)
   }
+  getAll(){
+    return this.http.get(`${this.apiURL}/newsletters/getAll`)
+  }
 }
