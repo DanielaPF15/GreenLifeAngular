@@ -1,7 +1,11 @@
 <div class="container p-5">
+    <div class="alert alert-primary" role="alert">
+        Apreciado administrador, recuerda mantener la información de las donaciones en confidencialidad!
+    </div>
+
     <h2 class="titulo">Donaciones</h2>
     <form [formGroup]="createDonationForm" (ngSubmit)="saveDonation()">
-        <p>Ingresa tus datos al formulario para realizar donaciones</p>
+
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>Entidad:</label>
@@ -32,6 +36,6 @@
                 <input type="text" class="form-control" formControlName="paymentSupport">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Donar!</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 </div>
