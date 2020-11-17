@@ -23,7 +23,7 @@ export class CreateDonationComponent implements OnInit {
     this.createDonationForm = this.formBuilder.group({
       entity: [''],
       project: ['5f9898856abe9a50141cbea9', Validators.required],
-      user: ['5f9898856abe9a50141cbea9'],
+      user: ['5f9898856abe9a50141cbea9', Validators.required],
       description: [''],
       value: ['', Validators.required],
       paymentSupport: ['', Validators.required]

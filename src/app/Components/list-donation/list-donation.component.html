@@ -1,0 +1,46 @@
+<!--<div class="container mt-5">
+    <h2 class="title">Donaciones registradas</h2>
+    <div class="row">
+        <div class="col mb-4" *ngFor="let d of allDonations">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <div class="card-header">Donación</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Entidad: </b> {{d.entity}} </li>
+                        <li class="list-group-item"><b>Proyecto: </b> {{d.project}} </li>
+                        <li class="list-group-item"><b>Editorial: </b> {{d.publisher}} </li>
+                        <li class="list-group-item"><b>Usuario: </b> {{d.user}} </li>
+                        <li class="list-group-item"><b>Descripción: </b> {{d.description}} </li>
+                        <li class="list-group-item"><b>Valor: </b> {{d.value}} </li>
+                        <li class="list-group-item"><b>Soporte de pago: </b> {{d.paymentSupport}} </li>
+                    </ul>
+                    <button type="button" class="btn btn-info" (click)="updateDonation(d)">Modificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="container mt-5">
+    <h2 class="title">Donaciones registradas</h2>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Entidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Soporte de pago</th>
+            <th scope="col">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of allDonations">
+            <th scope="row">{{d.entity}}</th>
+            <td>{{d.description}}</td>
+            <td>{{d.value}}</td>
+            <td>{{d.paymentSupport}}</td>
+            <td><a (click)="updateDonation(d)">Modificar</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
