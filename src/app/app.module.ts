@@ -20,6 +20,9 @@ import { CreateExperiencesComponent } from './Components/create-experiences/crea
 import { CreateNewsletterComponent } from './Components/create-newsletter/create-newsletter.component';
 import { ListDonationComponent } from './Components/list-donation/list-donation.component';
 import { UpdateDonationComponent } from './Components/update-donation/update-donation.component';
+import { ListNewsletterComponent } from './Components/list-newsletter/list-newsletter.component';
+import { ListUserComponent } from './Components/list-user/list-user.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 
 
@@ -34,7 +37,10 @@ const routesApp: Routes = [
   {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent },
   {path: 'create-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: CreateNewsletterComponent},
   {path: 'list-donation', canActivate: [AuthGuard], data: {only: 'Admin'}, component:ListDonationComponent},
-  {path: 'update-donation/:id', canActivate: [AuthGuard], data: {only: 'Admin'}, component:UpdateDonationComponent}
+  {path: 'update-donation/:id', canActivate: [AuthGuard], data: {only: 'Admin'}, component:UpdateDonationComponent},
+  {path: 'list-newsletter', canActivate: [AuthGuard],data: {only: 'Admin'}, component: ListNewsletterComponent},
+  {path: 'list-user' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: ListUserComponent},
+  {path: 'update-user/:id' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: UpdateUserComponent},
 
 ]
 @NgModule({
@@ -53,6 +59,9 @@ const routesApp: Routes = [
     CreateNewsletterComponent,
     ListDonationComponent,
     UpdateDonationComponent
+    ListNewsletterComponent,
+    ListUserComponent,
+    UpdateUserComponent
 
   ],
   imports: [

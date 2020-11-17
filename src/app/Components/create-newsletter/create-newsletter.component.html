@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-light bg-info text-center m-4">
   <h1>Publicaciones</h1>
   <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
 
@@ -8,22 +8,28 @@
         <input formControlName="title" id="title" type="text"
           class="form-control" placeholder="Título de la publicación">
       </div>
+     
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
 
-        <input formControlName="description" id="description" type="text"
+        <input formControlName="description" id="description" type="text-area"
           class="form-control" placeholder="Descripción">
       </div>
     </div>
       <div class="form-row">
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-6">
           <label>Fecha</label>
           <input formControlName="date" id="date" type="date"
             class="form-control">
         </div>
       </div>
-      <button class="btn btn-lg btn-info">Guardar publicacion</button>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+      <img class="img-form" src="assets/images/cuidado.jpg">
+    </div>
+    </div>
+      <button class="btn btn-lg btn-success">Guardar Publicación</button>
 
     </form>
   </div>

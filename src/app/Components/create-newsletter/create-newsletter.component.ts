@@ -27,7 +27,7 @@ export class CreateNewsletterComponent implements OnInit {
     title :['', Validators.required],
     description: ['', Validators.required],
     date: ['', Validators.required],
-    status:  [true],
+    status:[true],
     user: ['5f9898856abe9a50141cbea9'],
     })
   }
