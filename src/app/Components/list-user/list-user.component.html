@@ -1,0 +1,26 @@
+
+<div class="container mt-10" >
+  <h1>Lista De Usuarios</h1>
+    <div class="row">
+        <div class="col mb-4" *ngFor="let u of allUsers">
+            <div class="card listaUsers" style="width: 21rem; height: 360px;"  >
+                <div class="card-body ">
+                  <h5 class="card-title">{{u.name}} {{u.lastName}} </h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Correo: </b> {{u. email}} </li>
+                    <li class="list-group-item"><b>Ciudad: </b> {{u.city}} </li>
+                    <li class="list-group-item"><b>Número celular: </b> {{u.cellPhone}} </li>
+                    <li class="list-group-item"><b>Nombre Usuario: </b> {{u.userName}} </li>
+                    <!--<li class="list-group-item"><b>Rol: </b> {{u.role}} </li>-->
+                    <li class="list-group-item"><b>Estado: </b> {{u.status}} </li>
+                  </ul>
+                 
+                    <a class="modificar-enlace close-icon" (click)="updateUser(u)" ><button class="btn btn-success text-center">Actualizar</button></a>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

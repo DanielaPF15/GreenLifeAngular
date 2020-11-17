@@ -18,5 +18,13 @@ export class UserService {
   login(formData){
     return this.http.post<User>(`${this.apiURL}/login`, formData)
   }
+
+  getAll(){
+    return this.http.get(`${this.apiURL}/user/getAll`)
+  }
+
+  updateUser(formData, idUser){
+    return this.http.put<User>(`${this.apiURL}/user/update/${idUser}`, formData)
+  }
 }
 
