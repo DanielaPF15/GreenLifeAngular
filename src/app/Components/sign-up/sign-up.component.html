@@ -1,6 +1,7 @@
-<div class="container rounded-sm color">
-    <div class="container-fluid">
-        <h1 class="text-center">Completa tus datos</h1>
+<div class="container-elementos rounded-sm color">
+    <div class="Contenedor-Crear">
+        <h1>Crea tu cuenta</h1>
+        
         <form [formGroup]="signUpForm" (ngSubmit)="saveUser()">
             <div class="form-row">
                 <div class="col-12 mb-3">
@@ -24,7 +25,9 @@
                     <input formControlName="cellPhone" type="text" class="form-control" id="cellPhone" placeholder="Teléfono">
                 </div>
                 <div class="col-12 mb-3">
+                    
                     <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Nombre de usuario">
+                    <!-- <span class="opacidad">Con este usuario iniciaras sesion</span> -->
                 </div>
             
                 <div class="col-12 mb-3">
@@ -33,9 +36,29 @@
                 </div>
             </div>
             <div class="text-center">
-                <button class="btn btn-lg btn-info">Crear cuenta</button>
+                <button class="btn btn-lg btn-success">Registrate</button>
             </div>
             
         </form>
     </div>
+    <div  class="imagen-Contenedor" >
+        <div class ="img-signUp" style="background-image: url('assets/images/ArbolCrearCuenta.jpg'); height: 565px;" >
+            <!--<img class="img-signUp" src="assets/images/ArbolCrearCuenta.jpg">-->
+            <div class="contenido-imagen">
+               
+                <h1>
+                    GreenLife Apoya al planeta!</h1>
+
+                <p style="margin-top: 30px;">Unete a GreenLife, ayuda al planeta y haz parte de esta hermosa causa que cada dia es apoyada por más y más personas.</p>
+
+                <h5><a href="/">Conoce más <i class="far fa-arrow-alt-circle-right"></i></a></h5>
+
+            </div>
+            
+        </div>
+    </div>
+    
 </div>
+
+
+

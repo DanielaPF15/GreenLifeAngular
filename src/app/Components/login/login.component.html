@@ -1,8 +1,9 @@
 <div class="container text-center">
-    <!--<video src="./Videos/fondo.mp4" mute autoplay loop>
-    </video>-->
 <div class="container-div estilos-contenedor">
     <h1>Iniciar sesion</h1>
+    <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
+        <source src="assets/images/video.mp4" type="video/mp4" />
+      </video>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-row">
             <input formControlName="userName" type="text" class="form-control"

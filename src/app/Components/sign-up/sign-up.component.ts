@@ -40,14 +40,26 @@ export class SignUpComponent implements OnInit {
       this.userService.createUser(this.signUpForm.value).subscribe(
         (userCreated) => {
           console.log(userCreated)
-          alert('Usuario creado correctamente')
+          alert('Usuario creado correctamente!')
+          
+           /* swal({
+            title: "Excelente!",
+            text: "Usuario creado correctamente!",
+            icon: "success",
+          }) */ 
+
 
         }, (error) => {
           console.error('Tuvimos un errror ->', error)
         }
       )
     } else {
-      alert('El formulario no es valido')
+      alert('El formulario es invalido!')
+       /* swal({
+        title: "Error!",
+        text: "El formulario es invalido!",
+        icon: "error",
+      }); */
     }
   }
 
