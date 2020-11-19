@@ -1,0 +1,16 @@
+.fondo{
+    background-color: rgba(43, 119, 131, 0.705);
+    margin: 3% 30% 3% 30%;
+    padding: 3%;
+}
+.tittle{
+    margin: 3%;
+    color: green;
+    text-align: center;
+    
+}
+.btn{
+    display: flex;
+    
+    margin: 3% 40% 3% 40%;
+}
