@@ -35,7 +35,8 @@ export class UpdateUserComponent implements OnInit {
       city: [dataUser.city, Validators.required],
       cellPhone: [dataUser.cellPhone, Validators.required],
       userName: [dataUser.userName, Validators.required],
-      
+      password: [dataUser.password, Validators.required],
+      role: [dataUser.role, Validators.required],
       status: [dataUser.status, Validators.required],
     })
   }
