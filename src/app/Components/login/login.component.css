@@ -10,13 +10,12 @@
     margin-top: 50px;
     margin-bottom: 70px;
     width: 430px !important;
-    background-color: rgba(93, 230, 223, 0.322);
+    background-color: rgba(93, 230, 223, 0.616);
     border: white 1px solid;
     border-radius: 8px;
 }
 
 .estilos-contenedor h1{
-    border-bottom: black 2px solid;
     margin-top: 35px;
     margin-bottom: 20px;
 }
@@ -39,3 +38,27 @@ button{
     width: 100%;
     padding: 15px;
 }
+
+.container input{
+    border: none;
+    border-bottom: 1.7px  black solid;
+}
+
+ #video_background {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+    }
+    #video_pattern {
+    background:#fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    }

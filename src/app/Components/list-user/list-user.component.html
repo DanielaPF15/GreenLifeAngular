@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container mt-10" >
   <h1>Lista De Usuarios</h1>
     <div class="row">
@@ -11,7 +11,7 @@
                     <li class="list-group-item"><b>Ciudad: </b> {{u.city}} </li>
                     <li class="list-group-item"><b>Número celular: </b> {{u.cellPhone}} </li>
                     <li class="list-group-item"><b>Nombre Usuario: </b> {{u.userName}} </li>
-                    <!--<li class="list-group-item"><b>Rol: </b> {{u.role}} </li>-->
+                    <li class="list-group-item"><b>Rol: </b> {{u.role}} </li>
                     <li class="list-group-item"><b>Estado: </b> {{u.status}} </li>
                   </ul>
                  
@@ -21,6 +21,48 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+
+<div class="container mt-5">
+  <div class="buscar-titulo">
+
+ 
+
+  <h2 class="title">Usuarios Registrados</h2>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Camilo Sa" aria-label="Buscar">
+    <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  </form>
+</div>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nombre Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Número celular</th>
+          <th scope="col">Nombre Usuario</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Acciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of allUsers" class="movimiento">
+          <th scope="row">{{u.name}} {{u.lastName}}</th>
+          <td >{{u. email}}</td>
+          <td>{{u.city}}</td>
+          <td>{{u.cellPhone}} </td>
+          <td>{{u.userName}} </td>
+          <td style="color: rgb(18, 218, 18);"><b>{{u.status}}</b> </td>      
+          
+          <td><a class="modificar-enlace close-icon" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 
 

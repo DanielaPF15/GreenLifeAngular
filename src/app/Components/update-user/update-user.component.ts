@@ -45,15 +45,26 @@ export class UpdateUserComponent implements OnInit {
     if (this.createUserForm.valid){
       this.userService.updateUser(this.createUserForm.value, this.idUser).subscribe(
         (usercreated) => {
-          alert('El usuario se modificó correctamente')
-          this.route.navigate(['/'])
+          alert ('Usuario modificado correctamete!')
+          /* swal({
+            title: "Excelente!",
+            text: "Usuario modificado correctamete!",
+            icon: "success",
+          }) */
+
+          this.route.navigate(['/list-user'])
         },
         (error) => {
           console.error('Error -> ', error)
         }
       )
     }else{
-      alert('Todos los campos deben estar llenos')
+      alert('Todos los campos son obligatorios')
+      /* swal({
+        title: "Error!",
+        text: "Todos los campos son obligatorios!",
+        icon: "error",
+      })  */
     }
   }
 
