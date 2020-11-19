@@ -2,6 +2,11 @@
 background-image: url(https://www.revistamoi.com/wp-content/uploads/2017/11/planta.jpg);
 color:white;
 text-align: right;
+background-size: cover;
+}
+.container-fluid{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 .card-n{
     border-radius: 10px;
