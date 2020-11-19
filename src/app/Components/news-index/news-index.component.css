@@ -1,0 +1,42 @@
+.bg-img{
+background-image: url(https://www.revistamoi.com/wp-content/uploads/2017/11/planta.jpg);
+color:white;
+text-align: right;
+background-size: cover;
+}
+.container-fluid{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.card-n{
+    border-radius: 10px;
+    cursor:pointer;
+}
+.card-n:hover{
+    border-radius: 10px;
+    border: green 3px solid;
+    transition-duration: 1s;
+    
+}
+.img-boletin{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.img-boletin:hover{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border:green 2px solid;
+    transition-duration: 3s;
+}
+.texto{
+font-size: 20px;
+}
+.img-modal{
+width: 150px;
+height: 150px;
+border: rgb(21, 21, 99) solid 2px;
+border-radius: 50%;
+}
