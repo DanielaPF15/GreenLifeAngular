@@ -24,6 +24,7 @@ import { ListNewsletterComponent } from './Components/list-newsletter/list-newsl
 import { ListUserComponent } from './Components/list-user/list-user.component';
 import { UpdateUserComponent } from './Components/update-user/update-user.component';
 import { NewsIndexComponent } from './Components/news-index/news-index.component';
+import { UpdateProjectComponent } from './Components/update-project/update-project.component';
 
 
 
@@ -43,6 +44,7 @@ const routesApp: Routes = [
   {path: 'list-user' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: ListUserComponent},
   {path: 'update-user/:id' ,  canActivate: [AuthGuard],data: {only: 'Admin'}, component: UpdateUserComponent},
   {path: 'news-index' ,component: NewsIndexComponent},
+  {path: 'update-project/:id', canActivate: [AuthGuard], data: {only: 'Admin'}, component:UpdateProjectComponent},
 
 ]
 @NgModule({
@@ -64,7 +66,8 @@ const routesApp: Routes = [
     ListNewsletterComponent,
     ListUserComponent,
     UpdateUserComponent,
-    NewsIndexComponent
+    NewsIndexComponent,
+    UpdateProjectComponent
 
   ],
   imports: [

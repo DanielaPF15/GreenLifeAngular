@@ -12,6 +12,7 @@ export class UpdateDonationComponent implements OnInit {
 
   createDonationForm: FormGroup;
   idDonation: String;
+  
 
   constructor(
     private formBuilder:FormBuilder,
