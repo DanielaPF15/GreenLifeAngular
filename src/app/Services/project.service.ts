@@ -19,4 +19,7 @@ export class ProjectService {
   getAll(){
     return this.http.get(`${this.apiURL}/project/getAll`);
   }
+  updateProject(formData, idProject){
+    return this.http.put<Project>(`${this.apiURL}/project/update/${idProject}`, formData)
+  }
 }
