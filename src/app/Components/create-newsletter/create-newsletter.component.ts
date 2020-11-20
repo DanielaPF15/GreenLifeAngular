@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewsletterService } from '../../Services/newsletter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-newsletter',
@@ -10,16 +11,18 @@ import { NewsletterService } from '../../Services/newsletter.service';
 export class CreateNewsletterComponent implements OnInit {
 
   createNewsletterForm: FormGroup
-
+  allnewsletter: any;
   constructor(
 
     private formBuilder: FormBuilder,
-    private newsletterService: NewsletterService
+    private newsletterService: NewsletterService,
+    private route: Router
   ) {
     this.validator()
    }
 
   ngOnInit(): void {
+    this.getAll()
   }
 
   validator(){
@@ -45,6 +48,16 @@ export class CreateNewsletterComponent implements OnInit {
     } else{
       alert('Todos los campos debes estar llenos')
     }
+  }
+  getAll(){
+    this.newsletterService.getAll().subscribe(
+      (newsletter) => {
+         this.allnewsletter = newsletter
+      },
+      (error) => {
+        console.error('Error -> ', error)
+      }
+    )
   }
 
  
