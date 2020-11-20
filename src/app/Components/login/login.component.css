@@ -4,15 +4,33 @@
 	min-height: 100%;	
 	z-index: -1;
 }*/
+
+.container-fluid{
+    display: flex;
+}
+
+.texto{
+    width:60%;
+    margin: 5%;
+}
+
+.texto a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.texto a:hover {
+    color: blue;
+}
 .container{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 70px;
-    width: 430px !important;
-    background-color: rgba(93, 230, 223, 0.616);
+    width: 35% !important;
+    background-color: rgba(255, 255, 255, 0.644);
     border: white 1px solid;
     border-radius: 8px;
+    margin: 5%;
 }
 
 .estilos-contenedor h1{
