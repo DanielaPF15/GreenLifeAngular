@@ -1,3 +1,4 @@
+
 .container-elementos{
     display: flex;
     border: white 1px solid;
@@ -6,8 +7,9 @@
 }
 
 
-.Contenedor-Crear h1{
-        font-family: 'Quicksand', sans-serif !important;
+.Contenedor-Crear h2{
+    color: rgb(121, 118, 118);
+    border-bottom: green 1px solid;
     margin-top: 15px;
     margin-bottom: 30px; 
    text-align: center;
@@ -17,14 +19,12 @@
    margin-left: 10%;
 }
 
-.opacidad{
-    opacity: 0.6;
-}
-
 .Contenedor-Crear{
     width: 30%;
     justify-content: left; 
-    padding: 20px;
+    padding: 45px;
+    padding-bottom: 0;
+    padding-top: 30px;
 }
 
 .imagen-Contenedor{
@@ -47,7 +47,6 @@
 .contenido-imagen a {
     cursor: pointer;
     text-decoration: none;
-    transition: 1s;
     color: white;
 }
 .contenido-imagen a:hover {
@@ -74,8 +73,4 @@
     border: none;
     
     border-bottom: 1px solid rgb(160, 160, 160);
-}
-
-.imagen-Contenedor h1 {
-    font-family: 'Quicksand', sans-serif !important;
 }

@@ -1,22 +1,43 @@
-<div class="container text-center">
-<div class="container-div estilos-contenedor">
-    <h1>Iniciar sesion</h1>
-    <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
-        <source src="assets/images/video.mp4" type="video/mp4" />
-      </video>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-row">
-            <input formControlName="userName" type="text" class="form-control"
-                id="userName" placeholder="Nombre Usuario">
-        </div>
-        <div class="form-row">
+<div class="container-fluid">
+    <div class="texto">
+        <div>
+            <h1>CENTRO DE ACCION GREEN-LIFE</h1>
+            <p>Cada dia esta plataforma crece y crece gracias al apoyode todos
+                ustedes y la motivacion que
+                tiene con esta iniciativa de proteger la vida, detener el
+                calentamiento,y motivar a las
+                comunidades locales a cuidar sus recursos.
+            </p>
 
-            <input formControlName="password" type="password"
-                class="form-control" id="password" placeholder="Contraseña">
-                   <a class="olvidoContra" routerLink=""><span>¿Olvidaste tu contraseña?</span></a>
+            <h5><a href="/">Conoce más <i class="far fa-arrow-alt-circle-right"></i></a></h5>
         </div>
+    </div>
+    <div class="container text-center">
+        <div class="container-div estilos-contenedor">
+            <h1>Iniciar sesion</h1>
+            <video autoplay="autoplay" loop="loop" id="video_background"
+                preload="auto" volume="50">
+                <source src="assets/images/video.mp4" type="video/mp4" />
+            </video>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-row">
+                    <input formControlName="userName" type="text"
+                        class="form-control"
+                        id="userName" placeholder="Nombre Usuario">
+                </div>
+                <div class="form-row">
 
-        <button class="btn  btn-lg btn-success text-center">Iniciar sesión</button>
-    </form>
-</div>
+                    <input formControlName="password" type="password"
+                        class="form-control" id="password"
+                        placeholder="Contraseña">
+                    <a class="olvidoContra" routerLink=""><span>¿Olvidaste tu
+                            contraseña?</span></a>
+                </div>
+
+                <button class="btn btn-lg btn-success text-center">Iniciar
+                    sesión</button>
+            </form>
+        </div>
+    </div>
+
 </div>
