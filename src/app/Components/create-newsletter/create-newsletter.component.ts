@@ -38,8 +38,14 @@ export class CreateNewsletterComponent implements OnInit {
   saveNewsletter(){
     if(this.createNewsletterForm.valid){
       this.newsletterService.createNewsletter(this.createNewsletterForm.value).subscribe(
+        
         (newslettercreated)=>{
-          alert('La publicacion se creo correctamente')
+          alert('La publicación se creo correctamente')
+          this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.route.navigate(['/create-newsletter'])
+            }
+          )
         }, (error)=>{
           console.error('Error', error)
 
@@ -59,6 +65,22 @@ export class CreateNewsletterComponent implements OnInit {
       }
     )
   }
-
+  removeNewsletter(news_id){
+    this.newsletterService.deleteNewsletter(news_id).subscribe(
+      (newsDeleted)=>{
+     alert('Se Elimino la publicación')
+        this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+          () => {
+            this.route.navigate(['/create-newsletter'])
+          }
+        )
+    
+      },
+      (error)=>{
+      console.error('Error al eliminar la publicación, ' , error)
+      }
+    
+      )
+}
  
 }

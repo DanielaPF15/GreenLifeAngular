@@ -51,7 +51,7 @@
               class="form-control">
           </div>
         </div>
-        <button class="btn btn-success ml">Guardar Publicación</button>
+        <button class="btn btn-success ml "onClick="$('.modal').modal('hide');" >Guardar Publicación</button>
       </form>
     </div>
   </div>
@@ -61,7 +61,7 @@
   <h2 class="title">Proyectos Creados</h2>
 
   <table class="table table-striped">
-    <thead>
+    <thead class="bg-info text-light" >
       <tr>
         <th scope="col">Título</th>
         <th scope="col">Descripción</th>
@@ -73,13 +73,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let n of allnewsletter">
+      <tr *ngFor="let n of allnewsletter"class="movimiento">
         <th scope="row">{{n.title}}</th>
         <td >{{n.description}}</td>
         <td>{{n.date}}</td>
         <td>{{n.status}}</td>
         <td></td>
-        <td><a class="btn btn-secondary">X</a></td>
+        <td><a class="btn btn-secondary" (click)="removeNewsletter(n._id)">X</a></td>
       </tr>
     </tbody>
   </table>

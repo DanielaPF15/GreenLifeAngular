@@ -10,3 +10,11 @@
 .ml{
     margin-bottom: 3rem!important;
 }
+
+.movimiento{
+    transition: 0.7s;
+}
+
+.movimiento:hover{
+transform: scale(1.1);
+}
