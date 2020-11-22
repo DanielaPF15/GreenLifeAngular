@@ -40,6 +40,13 @@ export class CreateNewsletterComponent implements OnInit {
       this.newsletterService.createNewsletter(this.createNewsletterForm.value).subscribe(
         (newslettercreated)=>{
           alert('La publicacion se creo correctamente')
+
+          this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.route.navigate(['/create-newsletter'])
+            }
+          )
+
         }, (error)=>{
           console.error('Error', error)
 

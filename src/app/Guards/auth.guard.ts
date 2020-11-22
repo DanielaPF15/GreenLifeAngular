@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StorageService } from '../Services/storage.service';
+const swal = require('sweetalert')
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +24,21 @@ export class AuthGuard implements CanActivate {
       } if((infoUser.role == 'Voluntario' && route.data.only =='Voluntario') || !route.data.only){
         return true
       }else{
-        alert('No tienes permisos para ingresar a esa página')
+        swal({
+          title: "Alto!",
+          text: "No tienes permisos para ingresar!",
+          icon: "warning",
+        });
         this.router.navigate(['/'])
         return false
       }
 
     } else {
-      alert('Debes iniciar sesión')
+      swal({
+        title: "Alto!",
+        text: "Debes iniciar sesion",
+        icon: "warning",
+      });
       this.router.navigate(['/login'])
       return false
     }
