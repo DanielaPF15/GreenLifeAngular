@@ -39,7 +39,7 @@
 /**/
 
 .services-list li i {
-    background-color: #4c575a;
+    background-color: #397ae2f1;
 }
 
 .services-list li i {
@@ -67,4 +67,8 @@
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.titleModal {
+    color: grey;
 }
