@@ -35,10 +35,6 @@ font-family: cursive;
     margin-right: 30%;
 } */
 
-thead{
-    background-color: #AED6F1 ;
-}
-
 .buscar-titulo{
     display: flex;
     justify-content: space-between;
@@ -59,5 +55,14 @@ transform: scale(1.1);
 .fa-user-edit{
     color: rgb(71, 157, 238);
     font-size: 25px;
+}
+
+.fa-trash-alt{
+    color: red;
+    font-size: 25px;
+}
+
+.acciones{
+    margin-right: 30px;
 }
 

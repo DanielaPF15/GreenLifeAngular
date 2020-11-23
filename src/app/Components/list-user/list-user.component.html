@@ -38,7 +38,7 @@
   </form>
 </div>
   <table class="table table-striped">
-      <thead>
+      <thead class="bg-info text-light">
         <tr>
           <th scope="col">Nombre Apellido</th>
           <th scope="col">Correo</th>
@@ -58,11 +58,13 @@
           <td>{{u.cellPhone}} </td>
           <td>{{u.userName}} </td>
           <td style="color: rgb(18, 218, 18);"><b>{{u.status}}</b> </td>      
-          
-          <td><a class="modificar-enlace close-icon" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a></td>
+          <td><a class="close-icon acciones" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a>
+          <a class="close-icon" (click)="removeUser(u._id)"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
       </tbody>
     </table>
 </div>
+
+<!-- <i class="fas fa-trash"></i> -->
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../Services/user.service'
-import { Router} from '@angular/router'
+import { UserService } from '../../Services/user.service';
+import { Router} from '@angular/router';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-list-user',
@@ -14,7 +15,7 @@ export class ListUserComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private route: Router
+    private route: Router,
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +36,29 @@ export class ListUserComponent implements OnInit {
   updateUser(user){
     localStorage.setItem(`user-${user._id}`, JSON.stringify(user) )
     this.route.navigate([`/update-user/${user._id}`])
+  }
+
+  removeUser(idUser){
+    this.userService.deleteUser(idUser).subscribe(
+      (userDeleted) => {
+        swal({
+          title: "Hecho!",
+          text: "Usuario elimiando correctamente!",
+          icon: "success",
+        });
+
+        this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+          () => {
+            this.route.navigate(['/list-user'])
+          }
+        )
+
+      },(error) => {
+        console.error('Error al eliminar el Usuario', error)
+      }
+
+    )
+
   }
 
 }

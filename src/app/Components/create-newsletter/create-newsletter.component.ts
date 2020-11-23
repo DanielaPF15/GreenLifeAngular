@@ -41,6 +41,8 @@ export class CreateNewsletterComponent implements OnInit {
         
         (newslettercreated)=>{
           alert('La publicación se creo correctamente')
+
+
           this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
             () => {
               this.route.navigate(['/create-newsletter'])
