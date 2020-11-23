@@ -26,5 +26,9 @@ export class UserService {
   updateUser(formData, idUser){
     return this.http.put<User>(`${this.apiURL}/user/update/${idUser}`, formData)
   }
+
+  deleteUser(id){
+    return this.http.delete(`${this.apiURL}/user/deleteOne/${id}`)
+  }
 }
 
