@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../Services/user.service';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-update-user',
@@ -45,12 +46,11 @@ export class UpdateUserComponent implements OnInit {
     if (this.createUserForm.valid){
       this.userService.updateUser(this.createUserForm.value, this.idUser).subscribe(
         (usercreated) => {
-          alert ('Usuario modificado correctamete!')
-          /* swal({
+          swal({
             title: "Excelente!",
             text: "Usuario modificado correctamete!",
             icon: "success",
-          }) */
+          }) 
 
           this.route.navigate(['/list-user'])
         },
@@ -59,12 +59,11 @@ export class UpdateUserComponent implements OnInit {
         }
       )
     }else{
-      alert('Todos los campos son obligatorios')
-      /* swal({
+      swal({
         title: "Error!",
         text: "Todos los campos son obligatorios!",
         icon: "error",
-      })  */
+      })
     }
   }
 
