@@ -11,19 +11,21 @@
 
 .texto{
     width:60%;
-    margin: 5%;
+    margin: 3%;
+    margin-left: 5%;
 }
 
-.texto h1, h6{
-    color: green;
-    margin-left: 7%;
-    margin-right: 7%;
+.texto h1, h5{
+    color: rgb(18, 177, 18);
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
 }
 
-.texto h6{
-    margin-bottom: 3%;
-    color: black;
+.texto h5{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    color: white;
 }
 
 .contenedor-todo{
@@ -62,16 +64,17 @@
 }
 
 .texto a:hover {
-    color: blue;
+    color: rgb(18, 177, 18);
 }
 .container{
     display: flex;
     justify-content: center;
     width: 35% !important;
-    background-color: rgba(255, 255, 255, 0.644);
+    background-color: rgba(255, 255, 255, 0.644); 
     border: white 1px solid;
     border-radius: 8px;
-    margin: 5%;
+    margin: 6%;
+    height: 405px;
 }
 
 .estilos-contenedor h1{
@@ -90,7 +93,6 @@ button{
     justify-content: center;
     margin-top: 40px;
     margin-bottom: 40px;
-   
     width: 100%;
 }
 .estilos-contenedor{
@@ -103,7 +105,6 @@ button{
 }
 
 .estilos-contenedor button:hover{
-    transform: scale(1.1);
     background-color: white;
     color: black;
 }
@@ -113,7 +114,7 @@ button{
     border: none;
     border-bottom: 1.7px  black solid;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.644);
+    /* background-color: rgba(255, 255, 255, 0.644); */
 }
 
  #video_background {

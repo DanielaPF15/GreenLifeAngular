@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
+const swal = require('sweetalert')
 import { Router } from '@angular/router';
 
 @Component({
@@ -44,30 +45,27 @@ export class SignUpComponent implements OnInit {
       this.userService.createUser(this.signUpForm.value).subscribe(
         (userCreated) => {
           console.log(userCreated)
-          alert('Usuario creado correctamente!');
+          swal({
+            title: "Excelente!",
+            text: "Usuario creado correctamente",
+            icon: "success",
+          });
           this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
             () => {
-              this.route.navigate(['/sign-up'])
+              this.route.navigate(['/login'])
             }
           )
-           /* swal({
-            title: "Excelente!",
-            text: "Usuario creado correctamente!",
-            icon: "success",
-          }) */ 
-
-
+          
         }, (error) => {
           console.error('Tuvimos un errror ->', error)
         }
       )
     } else {
-      alert('El formulario es invalido!')
-       /* swal({
+      swal({
         title: "Error!",
-        text: "El formulario es invalido!",
+        text: "El formulario es invalido",
         icon: "error",
-      }); */
+      });
     }
   }
 
