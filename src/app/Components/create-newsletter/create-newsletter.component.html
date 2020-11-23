@@ -1,5 +1,5 @@
 <div class="container">
-
+<!-- redirigir al modal-->
 <div class="col">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -10,13 +10,14 @@
   </div>
 </div>
 </div>
-
+<!--redirigir modal-->
+<!--modal-->
 <div class="modal fade bd-example-modal p-5" tabindex="-1"
   role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content text-center">
-      <div class="modal-header">
+  aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
+  <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
+    <div class="modal-content text-center"> <!--contenido del modal-->
+      <div class="modal-header"><!--cabeza de modal-->
         <h5 class="modal-title"
           id="myModalLabel">
           Crear publicación
@@ -27,7 +28,7 @@
         </button>
       </div>
       <h1>Publicaciones</h1>
-      <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
+     <div class="formulari"> <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
         <div class="form">
           <div class="form-group col-6">
 
@@ -54,8 +55,10 @@
         <button class="btn btn-success ml "onClick="$('.modal').modal('hide');" >Guardar Publicación</button>
       </form>
     </div>
+    </div>
   </div>
 </div>
+<!--modal-->
 <!--tabla-->
 <div class="container mt-5">
   <h2 class="title">Proyectos Creados</h2>
