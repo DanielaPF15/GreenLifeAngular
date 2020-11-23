@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
 const swal = require('sweetalert')
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,9 +13,12 @@ export class SignUpComponent implements OnInit {
 
   signUpForm: FormGroup
 
+
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private route: Router
+
   ) {
     this.validator()
   }
@@ -46,7 +50,12 @@ export class SignUpComponent implements OnInit {
             text: "Usuario creado correctamente",
             icon: "success",
           });
-
+          this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.route.navigate(['/login'])
+            }
+          )
+          
         }, (error) => {
           console.error('Tuvimos un errror ->', error)
         }
