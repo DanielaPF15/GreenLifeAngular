@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationService } from '../../Services/donation.service';
+import { StorageService } from '../../Services/storage.service';
 import { Router } from '@angular/router';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-list-donation',
@@ -31,9 +33,27 @@ export class ListDonationComponent implements OnInit {
     )
   }
 
-  updateDonation(donation){
+  updateDonation(donation) {
     localStorage.setItem(`donation-${donation._id}`, JSON.stringify(donation))
     this.route.navigate([`/update-donation/${donation._id}`])
+  }
+
+  removeBook(id) {
+    this.donationService.deleteDonation(id).subscribe(
+      (donationDeleted) => {
+        swal('Proceso correcto', 'Donación eliminada correctamente', 'success')
+        this.route.navigateByUrl('/', {
+          skipLocationChange: true
+        }).then(
+          () => {
+            this.route.navigate(['/list-donation'])
+          }
+        );
+      },
+      (error) => {
+        console.log('Erro al eliminar una donación', error)
+      }
+    )
   }
 
 }

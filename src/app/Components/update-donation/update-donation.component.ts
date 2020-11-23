@@ -22,7 +22,7 @@ export class UpdateDonationComponent implements OnInit {
 
   ) {
     this.validator()
-   }
+  }
 
   ngOnInit(): void {
   }

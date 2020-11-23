@@ -69,7 +69,7 @@ const routesApp: Routes = [
     ListUserComponent,
     UpdateUserComponent,
     NewsIndexComponent,
-    updateProject,
+    UpdateProjectComponent,
     UpdateProjectComponent,
     AboutUsComponent,
 

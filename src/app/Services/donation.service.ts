@@ -24,4 +24,8 @@ export class DonationService {
   updateDonation(formData, idDonation){
     return this.http.put<Donation>(`${this.apiURL}/donation/update/${idDonation}`, formData)
   }
+
+  deleteDonation(id){
+    return this.http.delete(`${this.apiURL}/donation/delete/${id}`)
+  }
 }
