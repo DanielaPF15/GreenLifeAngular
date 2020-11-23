@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
           this.StorageService.saveToken(dataUser['token'])
           const infoUser = this.StorageService.dataUser()
           if(infoUser.role == 'Admin'){
-            this.router.navigate(['/create-project'])
+            this.router.navigate(['/'])
             }else{
-              this.router.navigate(['/list-project'])
+              this.router.navigate(['/'])
             }
         },
         (error) =>{
