@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../../Services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,9 +12,12 @@ export class SignUpComponent implements OnInit {
 
   signUpForm: FormGroup
 
+
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private route: Router
+
   ) {
     this.validator()
   }
@@ -40,8 +44,12 @@ export class SignUpComponent implements OnInit {
       this.userService.createUser(this.signUpForm.value).subscribe(
         (userCreated) => {
           console.log(userCreated)
-          alert('Usuario creado correctamente!')
-          
+          alert('Usuario creado correctamente!');
+          this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.route.navigate(['/sign-up'])
+            }
+          )
            /* swal({
             title: "Excelente!",
             text: "Usuario creado correctamente!",

@@ -19,4 +19,7 @@ export class NewsletterService {
   getAll(){
     return this.http.get(`${this.apiURL}/newsletters/getAll`)
   }
+  deleteNewsletter(idnews){
+    return this.http.delete(`${this.apiURL}/newsletters/deleteOne/${idnews}`)
+  }
 }
