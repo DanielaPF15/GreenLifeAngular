@@ -11,9 +11,52 @@
 
 .texto{
     width:60%;
-    margin: 5%;
+    margin: 3%;
+    margin-left: 5%;
 }
 
+.texto h1, h5{
+    color: rgb(18, 177, 18);
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.texto h5{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    color: white;
+}
+
+.contenedor-todo{
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.contenedor-img{
+    transition: 0.9;
+
+}
+
+.contenedor-img:hover{
+    transform: scale(1.1);
+
+}
+
+.contenedor-todo span {
+    margin-top: 5px;
+    margin-left: 30px;
+    color: white;
+    font-size: 20px;
+
+}
+
+.imagen{
+    height: 150px ;
+    width: 80%;
+
+}
 .texto a {
     cursor: pointer;
     text-decoration: none;
@@ -21,16 +64,17 @@
 }
 
 .texto a:hover {
-    color: blue;
+    color: rgb(18, 177, 18);
 }
 .container{
     display: flex;
     justify-content: center;
     width: 35% !important;
-    background-color: rgba(255, 255, 255, 0.644);
+    background-color: rgba(255, 255, 255, 0.644); 
     border: white 1px solid;
     border-radius: 8px;
-    margin: 5%;
+    margin: 6%;
+    height: 405px;
 }
 
 .estilos-contenedor h1{
@@ -49,7 +93,6 @@ button{
     justify-content: center;
     margin-top: 40px;
     margin-bottom: 40px;
-   
     width: 100%;
 }
 .estilos-contenedor{
@@ -57,9 +100,21 @@ button{
     padding: 15px;
 }
 
+.estilos-contenedor button{
+    transition: 0.9;
+}
+
+.estilos-contenedor button:hover{
+    background-color: white;
+    color: black;
+}
+
+
 .container input{
     border: none;
     border-bottom: 1.7px  black solid;
+    margin-bottom: 10px;
+    /* background-color: rgba(255, 255, 255, 0.644); */
 }
 
  #video_background {
