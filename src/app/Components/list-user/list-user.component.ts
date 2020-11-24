@@ -26,6 +26,7 @@ export class ListUserComponent implements OnInit {
     this.userService.getAll().subscribe(
       (users) => {
          this.allUsers = users
+         
       },
       (error) => {
         console.error('Error -> ', error)

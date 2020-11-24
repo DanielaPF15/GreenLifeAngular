@@ -3,9 +3,9 @@
   <div class="col">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <p class="card-text">Realiza una nueva publicación</p>
+        <p class="card-text">Crea un nuevo proyecto</p>
         <button type="button" class="btn btn-info" data-toggle="modal"
-          data-target=".bd-example-modal">Nueva publicación..</button>
+          data-target=".bd-example-modal">Nuevo proyecto..</button>
       </div>
     </div>
   </div>
@@ -128,11 +128,12 @@
        <td>{{p.endDate}}</td>
        <td>{{p.totalPeople}}</td>
        <td>{{p.status}}</td>
-       <td >{{p.user}}</td>
+       <td>{{p.user}}</td>
        <td>{{p.category.name}}</td>
-
-        <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i
-              class="fas fa-user-edit"> </i></a></td>
+       <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i class="fas fa-user-edit"></i></a>
+           <a class="close-icon" (click)="removeProject(p._id)"><i class="fas fa-trash-alt"></i></a>
+        </td>
+      
       </tr>
     </tbody>
   </table>
