@@ -1,4 +1,100 @@
-<div class="container p-5">
+<div class="container_image"
+    style="background-image: url(https://rs.projects-abroad.ie/v1/hero/product-5b67ea397e520.[1600].jpeg); background-size: cover; height: 400px;">
+</div>
+
+<div class="container mt-5">
+    <h3 class="mb-3" style="font-family: 'Raleway', sans-serif; color:rgb(27, 143, 27)">Gracias por apoyarnos y creer en nuestras causas, gracias por elegir Green Life y gracias por tu linda labor.
+    </h3>
+    <p>Las donaciones que realizes serán enviadas a los gestores de los proyectos a los que dones, recuerda que el 80%
+        de tu donativo ira al proyecto y el 20% será para Green Life, con el fin de poder mantener Green Life, tu
+        plataforma favorita.</p>
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row" style="display: flex; justify-content: center;">
+        <div style="width: 50%;display: flex; justify-content: center; border-right: 1px solid #ccc;">
+            <div class="card" style="width: 24rem; border: none;">
+                <!--<img src="assets/images/donaciones.png" class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h5 class="card-title" style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">Meta financiera Green Life</h5>
+                    <h5 class="card-title" style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">$5.000.000</h5>
+                    <p class="card-text">En Green Life tenemos una meta financiera para poder hacer crecer la plataforma
+                        y que llegue a más personas, ayúdanos!</p>
+                </div>
+            </div>
+        </div>
+        <div style="width: 50%; display: flex; justify-content: center;">
+            <div class="card" style="width: 24rem; border: none;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">Has aquí tu donación!</h5>
+                    <p class="card-text">Dona a tu proyecto favorito para apoyar las diferentes causas y aportar a que
+                        Green Life, haciendo que esta plataforma siga siendo la mejor de Colombia</p>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        Donar!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Formulario de donaciones</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-4">
+            <form [formGroup]="createDonationForm" (ngSubmit)="saveDonation()">
+                <p>Diligencia el formulario para poder realizar una donación</p>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Entidad:</label>
+                        <input type="text" class="form-control" formControlName="entity">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Proyecto</label>
+                        <input formControlName="project" id="project" type="hidden" class="form-control">
+                        <div class="row">
+                            <div class="col" *ngFor="let g of allProjects">
+                                <input type="checkbox" value="{{g._id}}" (click)="saveProject($event)"
+                                    style="margin-right:10px;">
+                                <label for=""> {{ g.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" class="form-control" formControlName="user">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <input type="text" class="form-control" formControlName="description">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Valor</label>
+                        <input type="text" class="form-control" formControlName="value">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Soporte de pago</label>
+                        <input type="text" class="form-control" formControlName="paymentSupport">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onClick="$('.modal').modal('hide');" >Donar!</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="container p-5">
     <h2 class="titulo">Donaciones</h2>
     <form [formGroup]="createDonationForm" (ngSubmit)="saveDonation()">
         <p>Ingresa tus datos al formulario para realizar donaciones</p>
@@ -11,12 +107,18 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>Proyecto</label>
-                <input type="text" class="form-control" formControlName="project">
+                <input formControlName="project" id="project" type="hidden" class="form-control">
+                <div class="row">
+                    <div class="col" *ngFor="let g of allProjects">
+                        <input type="checkbox" value="{{g._id}}" (click)="saveProject($event)"
+                            style="margin-right:10px;">
+                        <label for=""> {{ g.name}}</label>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
-            <label>Usuario</label>
-            <input type="text" class="form-control" formControlName="user">
+            <input type="hidden" class="form-control" formControlName="user">
         </div>
         <div class="form-group">
             <label>Descripción</label>
@@ -34,4 +136,4 @@
         </div>
         <button type="submit" class="btn btn-primary">Donar!</button>
     </form>
-</div>
+</div>-->

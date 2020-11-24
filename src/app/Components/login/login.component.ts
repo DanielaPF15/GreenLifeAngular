@@ -45,6 +45,11 @@ export class LoginComponent implements OnInit {
             }
         },
         (error) =>{
+          swal({
+            title: "Error!",
+            text: "Los campos no coinciden",
+            icon: "error",
+          });
           console.log('Error --->', error)
         }
       )
