@@ -1,38 +1,139 @@
 <div class="container mt-5">
-    <div class="buscar-titulo">
-  
-   
-  
-    <h2 class="title">Usuarios Registrados</h2>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Camilo Sa" aria-label="Buscar">
-      <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-    </form>
+  <!--Boton-->
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <p class="card-text">Realiza una nueva publicación</p>
+        <button type="button" class="btn btn-info" data-toggle="modal"
+          data-target=".bd-example-modal">Nueva publicación..</button>
+      </div>
+    </div>
   </div>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Nombre Apellido</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Número celular</th>
-            <th scope="col">Nombre Usuario</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Acciones</th>
-  
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let u of allProjects" class="movimiento">
-            <th scope="row">{{u.name}} {{u.lastName}}</th>
-            <td >{{u. email}}</td>
-            <td>{{u.city}}</td>
-            <td>{{u.cellPhone}} </td>
-            <td>{{u.userName}} </td>
-            <td style="color: rgb(18, 218, 18);"><b>{{u.status}}</b> </td>      
+  <!--boton-->
+  <!--modal-->
+  <div class="modal fade bd-example-modal p-5" tabindex="-1"
+  role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
+  <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
+    <div class="modal-content text-center"> <!--contenido del modal-->
+      <div class="modal-header"><!--cabeza de modal-->
+        <h5 class="modal-title"
+          id="myModalLabel">
+          Crear Proyecto
+        </h5>
+        <button type="button" class="close"
+          data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <form [formGroup]="createProjectForm" (ngSubmit)="saveProject()">
+
+        <div class="form">
+            <div class="form-group col-md-12 pt-3">
+              <input formControlName="name" id="name" type="text"
+                class="form-control" placeholder="Nombre Proyecto">
+            </div>
+    
+            <div class="form-group col-md-12">
+              <input formControlName="theme" id="theme" type="text"
+                class="form-control" placeholder="Tema">
+            </div>
+    
+            <div class="form-group col-md-12 ">
+              <input formControlName="description" id="description" type="text"
+                class="form-control" placeholder="Descripción">
+            </div>
+    
+            <div class="form-group col-md-12">
+              <input formControlName="city" id="city" type="text"
+                class="form-control" placeholder="Ciudad">
+            </div>
+    
+            <div class="form-group col-md-12">
+              <input formControlName="address" id="address" type="text"
+                class="form-control" placeholder="Dirección">
+            </div>
             
-            <td><a class="modificar-enlace close-icon" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a></td>
-          </tr>
-        </tbody>
-      </table>
+            <div class="form-group col-md-12">
+              <label>Fecha de inicio</label>
+              <input formControlName="startDate" id="startDate" type="date"
+                class="form-control">
+            </div>
+    
+    
+            <div class="form-group col-md-12">
+              <label>Fecha de fin</label>
+              <input formControlName="endDate" id="endDate" type="date"
+                class="form-control">
+            </div>
+            
+    
+            <div class="form-group col-md-12">
+              <input formControlName="totalPeople" id="totalPeople" type="text"
+                class="form-control" placeholder="Total de personas">
+            </div>
+    
+    
+            <div class="form-row p-3">
+              <div class="form-group col-md-12">
+                <label>Categoria del proyecto</label>
+                <input formControlName="category" id="category" class="form-control"
+                  type="hidden">
+                <div class="row">
+                  <div class="col" *ngFor="let c of allCategory">
+                    <input type="checkbox" value="{{c._id}}" (click)="saveCategory($event)">
+                    <label>{{c.name}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-lg btn-info " onClick="$('.modal').modal('hide');">Guardar proyecto</button>
+
+          </div>
+          </form>
+    
+    </div>
   </div>
+
+</div>
+
+  <!--modal-->
+
+  <div class="buscar-titulo">
+    <h2 class="title">Proyectos Creados</h2>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Proyecto</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Inicio</th>
+        <th scope="col">Fin</th>
+        <th scope="col">Total personas</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Creador</th>
+        <th scope="col">Categoría</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of allProjects" class="movimiento">
+        <th scope="row">{{p.name}}</th>
+        <td>{{p.description}}</td>
+        <td>{{p.city}}</td>
+        <td>{{p.address}}</td>
+        <td>{{p.startDate}}</td>
+       <td>{{p.endDate}}</td>
+       <td>{{p.totalPeople}}</td>
+       <td>{{p.status}}</td>
+       <td>{{p.user}}</td>
+       <td>{{p.category}}</td>
+
+        <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i
+              class="fas fa-user-edit"> </i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
