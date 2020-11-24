@@ -100,7 +100,9 @@ export class ListProjectComponent implements OnInit {
     this.projectService.getAll().subscribe(
       (projects) => {
          this.allProjects = projects
+         console.log(this.allProjects)
       },
+
       (error) => {
         console.error('Error -> ', error)
       }
@@ -133,5 +135,6 @@ export class ListProjectComponent implements OnInit {
     )
 
   }
-
+  
 }
+
