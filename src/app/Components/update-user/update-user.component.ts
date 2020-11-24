@@ -48,7 +48,7 @@ export class UpdateUserComponent implements OnInit {
         (usercreated) => {
           swal({
             title: "Excelente!",
-            text: "Usuario modificado correctamete!",
+            text: "Usuario modificado correctamente!",
             icon: "success",
           }) 
 

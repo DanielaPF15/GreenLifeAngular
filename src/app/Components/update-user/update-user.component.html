@@ -41,7 +41,19 @@
                 <input formControlName="status" id="status" type="text" class="form-control" >
               </div>
         </div>
-        
+
+        <!-- <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="password"><b>Contraseña:</b></label>
+              <input formControlName="password" id="password" type="password" required class="form-control"
+              class="form-control" >
+              <div *ngIf="updateUserForm.get('password').error?.minlength">
+                <p class="text-danger">La contraseña debe tener minimo 6 caracteres</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" *ngIF="!updateUserForm.valid"></div> -->
 
         <button class="btn btn-lg btn-info" >Guardar</button>
         

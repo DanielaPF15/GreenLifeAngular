@@ -40,7 +40,18 @@ export class LoginComponent implements OnInit {
           const infoUser = this.StorageService.dataUser()
           if(infoUser.role == 'Admin'){
             this.router.navigate(['/'])
+            swal({
+              title: "Bienvenido Admin! 🌻🍀",
+              text: "🍃Gracias por hacer parte de esta hermosa causa🌱",
+              button: "Aww yiss!🌺"
+            });
+    
             }else{
+              swal({
+                title: "Bienvenido a GreenLife Voluntario! 🌷🌻",
+                text: "🍃Gracias por unirte a esta hermosa causa🌱",
+                button: "Aww yiss!🌺"
+              });
               this.router.navigate(['/'])
             }
         },
