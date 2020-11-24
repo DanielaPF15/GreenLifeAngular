@@ -22,4 +22,7 @@ export class ProjectService {
   updateProject(formData, idProject){
     return this.http.put<Project>(`${this.apiURL}/project/update/${idProject}`, formData)
   }
+  deleteProject(id){
+    return this.http.delete(`${this.apiURL}/project/delete/${id}`)
+  }
 }
