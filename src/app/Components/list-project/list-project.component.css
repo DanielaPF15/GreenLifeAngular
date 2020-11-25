@@ -1,0 +1,16 @@
+.fa-user-edit{
+    color: rgb(71, 157, 238);
+    font-size: 25px;
+}
+
+.fa-trash-alt{
+    color: gray;
+    font-size: 25px;
+}
+.movimiento{
+    transition: 0.7s;
+}
+
+.movimiento:hover{
+transform: scale(1.1);
+}

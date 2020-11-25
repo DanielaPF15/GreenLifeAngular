@@ -22,3 +22,11 @@ transform: scale(1.1);
     display: flex;
     justify-content: center;
 }
+.fa-trash-alt{
+    color:gray;
+    font-size: 25px;
+}
+.fa-user-edit{
+    color: rgb(71, 157, 238);
+    font-size: 25px;
+}

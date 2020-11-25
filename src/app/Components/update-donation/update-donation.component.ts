@@ -53,7 +53,7 @@ export class UpdateDonationComponent implements OnInit {
       this.donationService.updateDonation(this.createDonationForm.value, this.idDonation).subscribe(
         (donationCreated) =>{
           swal('Proceso correcto', 'Donación actualizada correctamente', 'success')
-          this.router.navigate(['/'])
+          this.router.navigate(['/list-donation'])
         },
         (error) => {
           console.error('Error -> ', error)

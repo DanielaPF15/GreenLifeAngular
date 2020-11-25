@@ -1,4 +1,64 @@
-<div class="container" >
+<!-- <div class="container mt-5">
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Preserva</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card" >
+      <div class="card-body text-center">
+        <h5 class="card-title">Cuida</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Proteje</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Proteje</h5>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+<div class="container-fluid" >
+  <div class="container container-perfil">
+    <img src="assets/images/perfil.png" class="imagen-update">
+    <button class="btn btn-success mt-2 subir-foto" style="text-align: center;" >Subir foto</button>
+    
+   <div class="card col-sm-11 ml-5">
+      <div class="card-body text-center">
+        <h6>
+          Apartado de actualizar tu datos personales,para aplicarlo debes dar clic en guardar
+          y la proxima vez que inicies sesion debes hacerlo con tus nuevos datos.
+        </h6>
+        <h6><a href="/list-newsletter" class="enlace">Nuevas publicaciones <i class="far fa-arrow-alt-circle-right"></i></a>
+        </h6>
+      </div>
+    </div>
+   <!--  <div class="card mt-3 col-sm-6">
+      <div class="card-body text-center">
+        <h5>
+          Bienvenido al apartado de actualizar tu datos personales,para aplicarlo debes dar clic en guardar
+          y la proxima vez que inicies sesion debes hacerlo con tus nuevos datos.
+        </h5>
+        <a href="/list-newsletter">Ver nuevas publicaciones <i class="far fa-arrow-alt-circle-right"></i></a>
+      </div>
+    </div> -->
+
+    </div>
+<div class="container container-form">
     <h1>Actualizar Usuario</h1>
     <form [formGroup]="createUserForm" (ngSubmit)="saveUser()" >
 
@@ -12,11 +72,12 @@
               <input formControlName="lastName" id="lastName" type="text" class="form-control" >
             </div>
         </div>
+        
         <div class="form-row" >
-            <div class="form-group col-md-12" >
-              <label><b>Nombre Usuario:</b></label>
-              <input formControlName= "userName" id="userName" type="text" class="form-control" >
-            </div>
+          <div class="form-group col-md-12" >
+            <label><b>Numero Celular:</b></label>
+            <input formControlName="cellPhone" id="cellPhone" type="text" class="form-control" >
+          </div>
         </div>
        
 
@@ -32,14 +93,22 @@
         </div>
 
         <div class="form-row" >
+          <div class="form-group col-md-12" >
+            <label><b>Nombre Usuario:</b></label>
+            <input formControlName= "userName" id="userName" type="text" class="form-control" >
+          </div>
+      </div>
+     
+
+        <div class="form-row" >
             <div class="form-group col-md-12" >
               <label><b>Numero Celular:</b></label>
               <input formControlName="cellPhone" id="cellPhone" type="text" class="form-control" >
             </div>
-            <div class="form-group col-md-12" >
+            <!-- <div class="form-group col-md-12" >
                 <label><b>Estado:</b></label>
                 <input formControlName="status" id="status" type="text" class="form-control" >
-              </div>
+              </div> -->
         </div>
 
         <!-- <div class="form-row">
@@ -55,7 +124,9 @@
 
         <div class="form-row" *ngIF="!updateUserForm.valid"></div> -->
 
-        <button class="btn btn-lg btn-info" >Guardar</button>
+        <button class="btn btn-lg btn-info" style="text-align: center;" >Guardar</button>
         
     </form>
+  </div>
+  
 </div>

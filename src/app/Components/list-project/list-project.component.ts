@@ -17,6 +17,7 @@ export class ListProjectComponent implements OnInit {
   createProjectForm: FormGroup
   allCategory: any
   categoryProject: Array<any> = []
+  categoryForm: FormGroup
   constructor(
     private projectService: ProjectService,
     private router: Router,
@@ -29,7 +30,7 @@ export class ListProjectComponent implements OnInit {
     this.getAll()
     this.validator()
     this.getCategory()
-
+    this.validatorC()
   }
   validator(){
     this.createProjectForm= this.formBuilder.group({
@@ -135,6 +136,31 @@ export class ListProjectComponent implements OnInit {
     )
 
   }
-  
+  validatorC(){
+    this.categoryForm= this.formBuilder.group({
+    name: ['', Validators.required],
+    })
+  }
+  newCategory(){
+    if(this.categoryForm.valid){
+      this.categoryService.createCategory(this.categoryForm.value).subscribe(
+        (categoryCreated) =>{
+          swal({
+            title: "Hecho!",
+            text: "Categoría creada correctamente!",
+            icon: "success",
+          });
+        },
+        (error)=>{
+          console.error('Error ->', error)
+        }
+      )
+
+    }else{
+      alert('Todos los campos debes estar llenos')
+    }
+
+  }
+
 }
 
