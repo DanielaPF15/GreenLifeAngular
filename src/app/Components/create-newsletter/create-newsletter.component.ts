@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewsletterService } from '../../Services/newsletter.service';
 import { Router } from '@angular/router';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-create-newsletter',
@@ -40,8 +41,11 @@ export class CreateNewsletterComponent implements OnInit {
       this.newsletterService.createNewsletter(this.createNewsletterForm.value).subscribe(
         
         (newslettercreated)=>{
-          alert('La publicación se creo correctamente')
-
+          swal({
+            title: "Excelente!",
+            text: "¡Publicación creada!",
+            icon: "success",
+          }) 
 
           this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
             () => {
@@ -70,7 +74,12 @@ export class CreateNewsletterComponent implements OnInit {
   removeNewsletter(news_id){
     this.newsletterService.deleteNewsletter(news_id).subscribe(
       (newsDeleted)=>{
-     alert('Se Elimino la publicación')
+        swal({
+          title: "Ok!",
+          text: "Se elimino correctamente!",
+          icon: "warning",
+        }) 
+
         this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
           () => {
             this.route.navigate(['/create-newsletter'])
@@ -83,6 +92,10 @@ export class CreateNewsletterComponent implements OnInit {
       }
     
       )
+}
+updateNewsletter(newsletter){
+  localStorage.setItem(`newsletter-${newsletter._id}`, JSON.stringify(newsletter) )
+  this.route.navigate([`/update-newsletter/${newsletter._id}`])
 }
  
 }

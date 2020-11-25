@@ -49,21 +49,21 @@
           <a class="nav-link" routerLink="/create-newsletter">Publicaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/list-project">Listar Proyectos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/list-donation">Donaciones</a>
         </li>
         <li>
-          <a class="nav-link" routerLink="/list-user">Lista Usuarios</a>
+          <a class="nav-link" >Lista Usuarios</a>
         </li>
       </ul>
-      <span class="navbar-text"> <b>Bienvenido a Greenlife {{user.name}}!</b>
+      <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
+      <a class="material-icons close-icon" (click)="updateUser()">settings</a>
+
+      <span class="material-icons close-icon" (click)="destroySession()">exit_to_app</span>
+
     </div>
   </nav>
 </div>
@@ -95,10 +95,10 @@
           <a class="nav-link" routerLink="/create-donation">Donaciones</a>
         </li>
       </ul>
-      <span class="navbar-text"> <b>Bienvenido a Greenlife {{user.name}}!</b>
+      <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <a class="material-icons close-icon" (click)="updateUser()">Ac</a>
-      <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
+      <a class="material-icons close-icon" (click)="updateUser()">settings</a>
+      <span class="material-icons close-icon" (click)="destroySession()">exit_to_app</span>
     </div>
   </nav>
 
