@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DonationService } from '../../Services/donation.service';
+import { ProjectService } from '../../Services/project.service';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-update-donation',
@@ -12,15 +14,19 @@ export class UpdateDonationComponent implements OnInit {
 
   createDonationForm: FormGroup;
   idDonation: String;
+  allProject: any
+  projectDonation: Array<any> = []
   
 
   constructor(
     private formBuilder:FormBuilder,
     private donationService: DonationService,
+    private projectService: ProjectService,
     private router: Router,
     private routeParams: ActivatedRoute
 
   ) {
+    this.getProject()
     this.validator()
   }
 
@@ -34,7 +40,7 @@ export class UpdateDonationComponent implements OnInit {
 
     this.createDonationForm = this.formBuilder.group({
       entity: [dataDonation.entity],
-      project: [dataDonation.project],
+      project: [this.projectDonation],
       user: [dataDonation.user],
       description: [dataDonation.description],
       value: [dataDonation.value, Validators.required],
@@ -46,7 +52,7 @@ export class UpdateDonationComponent implements OnInit {
     if(this.createDonationForm.valid){
       this.donationService.updateDonation(this.createDonationForm.value, this.idDonation).subscribe(
         (donationCreated) =>{
-          alert('La donación se modificó correctamente')
+          swal('Proceso correcto', 'Donación actualizada correctamente', 'success')
           this.router.navigate(['/list-donation'])
         },
         (error) => {
@@ -54,8 +60,36 @@ export class UpdateDonationComponent implements OnInit {
         }
       )
     }else{
-      alert('Todos los campos deben esta llenos')
+      swal('Proceso Incorrecto', 'La donación no se actualizó', 'error')
     }
+  }
+
+  getProject(){
+    this.projectService.getAll().subscribe(
+      (projects) => {
+        this.allProject = projects
+      },
+      (error) =>{
+        console.error('Error -->', error)
+      }
+    )
+  }
+
+  saveProject(event){
+    console.log(event.target.value)
+    if(this.projectDonation.includes(event.target.value)){
+      const index = this.projectDonation.indexOf(event.target.value)
+      this.projectDonation.splice(index, 1)
+    }else{
+      this.projectDonation.push(event.target.value)
+    }
+
+    let valueInput: any = ''
+    if(this.projectDonation.length > 0){
+      valueInput = this.projectDonation
+    }
+
+    this.createDonationForm.get('project').setValue(valueInput)
   }
 
 }

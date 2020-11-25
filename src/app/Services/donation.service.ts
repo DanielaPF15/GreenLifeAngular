@@ -17,8 +17,8 @@ export class DonationService {
     return this.http.post<Donation>(`${this.apiURL}/donation/create`, formData)
   }
 
-  getAll(){
-    return this.http.get(`${this.apiURL}/donation/getAll`)
+  getAll(filter){
+    return this.http.get(`${this.apiURL}/donation/getAll${filter}`)
   }
 
   updateDonation(formData, idDonation){
