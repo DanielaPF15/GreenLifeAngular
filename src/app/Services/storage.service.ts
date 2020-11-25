@@ -25,8 +25,8 @@ export class StorageService {
     }
     let urlBase64 = token.split('.')[1]
     let b64 = urlBase64.replace('-','+').replace('_','/')//facilitarle al algoritmo de encriptacio la decodificacion de la info
-
-    return JSON.parse(this.decodeData(b64))
+    console.log(this.decodeData(b64));
+    return JSON.parse(this.decodeData(b64));
   }
   decodeData(string){
     return decodeURIComponent( atob(string).split('').map(
@@ -34,9 +34,11 @@ export class StorageService {
           return '%' + ('00' + c.charCodeAt(0).toString(16) ).slice(-2)
       }
     ).join('') )
+
   }
   removeSession(){
     localStorage.removeItem('session')
     this.auth.next(null)
   }
+  
 }
