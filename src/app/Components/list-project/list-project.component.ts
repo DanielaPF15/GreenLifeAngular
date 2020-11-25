@@ -3,6 +3,7 @@ import { ProjectService } from '../../Services/project.service'
 import { Router} from '@angular/router'
 import { CategoryService } from '../../Services/category.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+const swal = require('sweetalert')
 
 
 
@@ -99,7 +100,9 @@ export class ListProjectComponent implements OnInit {
     this.projectService.getAll().subscribe(
       (projects) => {
          this.allProjects = projects
+         console.log(this.allProjects)
       },
+
       (error) => {
         console.error('Error -> ', error)
       }
@@ -108,7 +111,30 @@ export class ListProjectComponent implements OnInit {
 
   updateProject(project){
     localStorage.setItem(`project-${project._id}`, JSON.stringify(project) )
-    this.router.navigate([`/update-user/${project._id}`])
+    this.router.navigate([`/update-project/${project._id}`])
   }
+  removeProject(idProject){
+    this.projectService.deleteProject(idProject).subscribe(
+      (projectDeleted) => {
+        swal({
+          title: "Hecho!",
+          text: "Proyecto elimiando correctamente!",
+          icon: "success",
+        });
 
+        this.router.navigateByUrl('/', { skipLocationChange: true } ).then(
+          () => {
+            this.router.navigate(['/list-project'])
+          }
+        )
+
+      },(error) => {
+        console.error('Error al eliminar el proyecto', error)
+      }
+
+    )
+
+  }
+  
 }
+
