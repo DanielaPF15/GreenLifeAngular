@@ -52,9 +52,6 @@
           <a class="nav-link" routerLink="/create-category">Crear Categoria</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/create-project">Crear Proyectos</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/list-project">Listar Proyectos</a>
         </li>
         <li class="nav-item">
@@ -100,6 +97,7 @@
       </ul>
       <span class="navbar-text"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
+      <a class="material-icons close-icon" (click)="updateUser()">Ac</a>
       <span class="material-icons close-icon" (click)="destroySession()">power_settings_new</span>
     </div>
   </nav>

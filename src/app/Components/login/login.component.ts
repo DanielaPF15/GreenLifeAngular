@@ -39,9 +39,19 @@ export class LoginComponent implements OnInit {
           this.StorageService.saveToken(dataUser['token'])
           const infoUser = this.StorageService.dataUser()
           if(infoUser.role == 'Admin'){
-            this.router.navigate(['/']);
+            this.router.navigate(['/'])
+            swal({
+              title: "Bienvenido Admin! 🌻🍀",
+              text: "🍃Gracias por hacer parte de esta hermosa causa🌱",
+              button: "Aww yiss!🌺"
+            });
             }else{
-              this.router.navigate(['/']);
+              swal({
+                title: "Bienvenido a GreenLife Voluntario! 🌷🌻",
+                text: "🍃Gracias por unirte a esta hermosa causa🌱",
+                button: "Aww yiss!🌺"
+              });
+              this.router.navigate(['/'])
             }
         },
         (error) =>{
