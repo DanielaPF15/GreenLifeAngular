@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
           this.StorageService.saveToken(dataUser['token'])
           const infoUser = this.StorageService.dataUser()
           if(infoUser.role == 'Admin'){
-            this.router.navigate(['/'])
+            this.router.navigate(['/']);
             }else{
-              this.router.navigate(['/'])
+              this.router.navigate(['/']);
             }
         },
         (error) =>{
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
             text: "Los campos no coinciden",
             icon: "error",
           });
-          console.log('Error --->', error)
+          console.log('Error --->', error);
         }
       )
     }else{

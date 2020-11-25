@@ -12,6 +12,7 @@ export class CreateExperiencesComponent implements OnInit {
 
   createExperiencesForm: FormGroup;
   allProjects: any;
+  allExperiences: any;
   projectsExperiences:Array<any> = [];
 
   constructor(
@@ -24,6 +25,7 @@ export class CreateExperiencesComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
   validator(){
@@ -79,6 +81,17 @@ export class CreateExperiencesComponent implements OnInit {
 
     this.createExperiencesForm.get('project').setValue(valueInput);
 
+  }
+
+  getAll(){
+    this.experiencesService.getAll().subscribe(
+      (experiences) => {
+         this.allExperiences = experiences;
+      },
+      (error) => {
+        console.error('Error -> ', error);
+      }
+    );
   }
 
 }
