@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Experiences } from '../Models/Experiences';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class ExperiencesService {
@@ -15,5 +15,9 @@ export class ExperiencesService {
 
   createExperiences(formData){
     return this.http.post<Experiences>(`${this.apiURL}/experiences/create`, formData);
+  }
+
+  getAll(){
+    return this.http.get(`${this.apiURL}/experiences/getAll`);
   }
 }

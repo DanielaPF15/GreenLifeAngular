@@ -1,42 +1,38 @@
 <div *ngIf="!user">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
       navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about-us">¿Quienes somos?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/news-index">Boletin informativo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sign-up">Crear cuenta</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
- 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about-us">¿Quienes somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/news-index">Boletin informativo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/sign-up">Crear cuenta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
 </div>
 
 <div *ngIf="user && user.role == 'Admin'">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
       navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -69,11 +65,9 @@
 </div>
 
 <div *ngIf="user && user.role == 'Voluntario'">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
       navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -101,5 +95,4 @@
       <span class="material-icons close-icon" (click)="destroySession()">exit_to_app</span>
     </div>
   </nav>
-
 </div>

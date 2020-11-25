@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 import { ExperiencesService } from '../../Services/experiences.service';
 import { ProjectService } from '../../Services/project.service';
 
+
 @Component({
   selector: 'app-create-experiences',
   templateUrl: './create-experiences.component.html',
@@ -12,6 +13,7 @@ export class CreateExperiencesComponent implements OnInit {
 
   createExperiencesForm: FormGroup;
   allProjects: any;
+  allExperiences: any;
   projectsExperiences:Array<any> = [];
 
   constructor(
@@ -24,6 +26,7 @@ export class CreateExperiencesComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
   validator(){
@@ -79,6 +82,17 @@ export class CreateExperiencesComponent implements OnInit {
 
     this.createExperiencesForm.get('project').setValue(valueInput);
 
+  }
+
+  getAll(){
+    this.experiencesService.getAll().subscribe(
+      (experiences) => {
+         this.allExperiences = experiences;
+      },
+      (error) => {
+        console.error('Error -> ', error);
+      }
+    );
   }
 
 }

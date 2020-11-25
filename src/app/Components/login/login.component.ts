@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
               text: "🍃Gracias por hacer parte de esta hermosa causa🌱",
               button: "Aww yiss!🌺"
             });
-    
             }else{
               swal({
                 title: "Bienvenido a GreenLife Voluntario! 🌷🌻",
@@ -61,7 +60,7 @@ export class LoginComponent implements OnInit {
             text: "Los campos no coinciden",
             icon: "error",
           });
-          console.log('Error --->', error)
+          console.log('Error --->', error);
         }
       )
     }else{
