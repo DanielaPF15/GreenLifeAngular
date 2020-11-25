@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Experiences } from '../Models/Experiences';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class ExperiencesService {
