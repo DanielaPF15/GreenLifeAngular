@@ -1,41 +1,61 @@
-<div class="container p-5">
+<div class="container pr-5 pl-5 pt-5">
     <div class="alert alert-primary" role="alert">
         Apreciado administrador, recuerda mantener la información de las donaciones en confidencialidad!
     </div>
+</div>
 
-    <h2 class="titulo">Donaciones</h2>
-    <form [formGroup]="createDonationForm" (ngSubmit)="saveDonation()">
 
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label>Entidad:</label>
-                <input type="text" class="form-control" formControlName="entity">
+<div class="container pr-5 pl-5">
+    <h2 class="titulo mb-4 pb-3" style="font-family: 'Raleway', sans-serif; color:rgb(27, 143, 27); border-bottom: 1px solid rgb(27, 143, 27)">Actualizar donación</h2>
+    <div class="row">
+        <div style="width: 30%;" style="display: flex; justify-content: center;" class="mr-5">
+            <div class="card" style="width: 16rem;">
+                <img src="https://funproyesi.com/web/images/donaciones/img-titulo-donaciones.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">La actualización de las donaciones se debe dar de forma confidencial y correcta, como administrador recuerda actualizar los campos que sean necesarios.</p>
+                </div>
             </div>
         </div>
-        <!--<div class="form-row">
-            <div class="form-group col-md-12">
-                <label>Proyecto</label>
-                <input type="text" class="form-control" formControlName="project">
-            </div>
+        <div style="width: 70%;">
+            <form [formGroup]="createDonationForm" (ngSubmit)="saveDonation()">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Entidad:</label>
+                        <input type="text" class="form-control" formControlName="entity">
+                    </div>
+                </div>
+                <!--<div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Proyecto</label>
+                        <input type="text" class="form-control" formControlName="project" id="project">
+                        <div class="row">
+                            <div class="col" *ngFor="let p of allProject">
+                                <input type="checkbox" value="{{p._id}}" checked="{{projectDonation.includes(p._id) ? 'checked' : '' }}" (click)="saveProject($event)">
+                                <label>{{p.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control" formControlName="user">
+                </div>-->
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <input type="text" class="form-control" formControlName="description">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Valor</label>
+                        <input type="text" class="form-control" formControlName="value">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Soporte de pago</label>
+                        <input type="text" class="form-control" formControlName="paymentSupport">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label>Usuario</label>
-            <input type="text" class="form-control" formControlName="user">
-        </div>-->
-        <div class="form-group">
-            <label>Descripción</label>
-            <input type="text" class="form-control" formControlName="description">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label>Valor</label>
-                <input type="text" class="form-control" formControlName="value">
-            </div>
-            <div class="form-group col-md-6">
-                <label>Soporte de pago</label>
-                <input type="text" class="form-control" formControlName="paymentSupport">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-    </form>
+    </div>
 </div>
