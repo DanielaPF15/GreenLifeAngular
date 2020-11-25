@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 import { ExperiencesService } from '../../Services/experiences.service';
 import { ProjectService } from '../../Services/project.service';
+import { StorageService } from '../../Services/storage.service';
+import { Router } from '@angular/router';
+const swal = require('sweetalert')
 
 
 @Component({
@@ -19,10 +22,13 @@ export class CreateExperiencesComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private experiencesService: ExperiencesService,
-    private projectService: ProjectService
+    private storageService: StorageService,
+    private projectService: ProjectService,
+    private route: Router
   ) {
     this.getProject();
     this.validator();
+    let dataUser = this.storageService.dataUser();
    }
 
   ngOnInit(): void {
@@ -30,11 +36,13 @@ export class CreateExperiencesComponent implements OnInit {
   }
 
   validator(){
+    let dataUser = this.storageService.dataUser();
     this.createExperiencesForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: [dataUser.name, Validators.required],
       project: ['', Validators.required],
       description: ['', Validators.required],
-      evidence: ['', Validators.required]
+      evidence: ['', Validators.required],
+      user: [dataUser.sub, Validators.required]
     });
   }
 
@@ -42,14 +50,28 @@ export class CreateExperiencesComponent implements OnInit {
     if (this.createExperiencesForm.valid){
       this.experiencesService.createExperiences(this.createExperiencesForm.value).subscribe(
         (experiencesCreated) => {
-          alert('La experiencia se creo correctamente');
+          swal({
+            title: "Excelente!",
+            text: "Tu experiencia fue registrada correctamente",
+            icon: "success",
+          });
+
+          this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.route.navigate(['/create-experiences']);
+            }
+          );
         },
         (error) => {
           console.log('Error -> ', error);
         }
       );
     }else{
-      alert('Todos los campos deben estar llenos');
+      swal({
+        title: "Error!",
+        text: "El formulario es invalido, complete todos los campos",
+        icon: "error",
+      });
     }
   }
 

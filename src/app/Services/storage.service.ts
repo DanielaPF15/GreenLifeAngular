@@ -25,7 +25,7 @@ export class StorageService {
     }
     let urlBase64 = token.split('.')[1]
     let b64 = urlBase64.replace('-','+').replace('_','/')//facilitarle al algoritmo de encriptacio la decodificacion de la info
-    console.log(this.decodeData(b64));
+    //console.log(this.decodeData(b64));
     return JSON.parse(this.decodeData(b64));
   }
   decodeData(string){

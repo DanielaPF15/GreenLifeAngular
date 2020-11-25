@@ -12,25 +12,24 @@
             <div class="tab-content" id="myTabContent">
                 <form [formGroup]="createExperiencesForm" (ngSubmit)="saveExperiences()">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Nombre</label>
-                            <input formControlName="name" id="name" type="text" class="form-control" placeholder="Ingrese su Nombre">
+                        <div>
+                            <input formControlName="name" id="name" type="hidden" value="">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Imagen</label>
-                            <input formControlName="evidence" id="evidence" type="text" class="form-control" placeholder="Suba su imagen">
-                        </div>
-                    </div>
 
-                    <div class="form-row">
+                        <div>
+                            <input formControlName="user" id="user" type="hidden" value="">
+                        </div>
+
                         <div class="form-group col-md-6">
                             <label>Descripción</label>
                             <textarea formControlName="description" id="description" type="text" class="form-control" rows="3" placeholder="Tu opinion y/o experiencia del proyecto"></textarea>
                         </div>
-                        <!--<div class="form-group col-md-6">
-                            <label>ID</label>
-                            <input formControlName="evidence" id="evidence" type="text" value="">
-                        </div>-->
+
+                        <div class="form-group col-md-6">
+                            <label>Imagen</label>
+                            <input formControlName="evidence" id="evidence" type="text" class="form-control" placeholder="Suba su imagen">
+                        </div>
+
                     </div>
 
                     <div class="form-row">
