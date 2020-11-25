@@ -23,20 +23,55 @@
     </div>
 </div> -->
 
+<div>
+  <div class="container mt-5 mb-5">
+    <div class="buscar-titulo">
+      <h2 class="title">Informacion de usuarios</h2>
+      <div class="col-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Nombre voluntario" aria-label="Search"
+        (keyup)="loadUser()" [(ngModel)]="search"
+        >
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0">Search</button> -->
+      </div>
+    </div>
+      <div class="row" style="display: flex; justify-content: center;">
+          <div style="width: 50%;display: flex; justify-content: center; border-right: 1px solid #ccc;">
+              <div class="card" style="width: 24rem; border: none;">
+                  <!--<img src="assets/images/donaciones.png" class="card-img-top" alt="...">-->
+                  <div class="card-body">
+                      <h5 class="card-title"
+                          style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">
+                          Usuarios de GreenLife</h5>
+                      <p class="card-text">En este apartado encontraras a todos los usuarios 
+                        pertenecientes en el sistema tu acciones dentro de este sera eliminarlos,
+                      lo podras hacer metiante el icono de la caneca que se encuentra al final de cada uno de ellos.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div style="width: 50%; display: flex; justify-content: center;">
+              <div class="card" style="width: 24rem; border: none;">
+                  <div class="card-body">
+                      <h5 class="card-title"
+                          style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">
+                        Buscador
+                        </h5>
+                      <p class="card-text">
+                        En la parte superior a este cuadro encontraras el buscador de usuarios, 
+                        este te facilitara la busqueda de estos en la lista.
+                      </p>
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 
 <div class="container mt-5">
-  <div class="buscar-titulo">
-
- 
-
-  <h2 class="title">Usuarios Registrados</h2>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Camilo Sa" aria-label="Buscar">
-    <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
-  </form>
-</div>
+  
   <table class="table table-striped">
       <thead class="bg-info text-light">
         <tr>
@@ -58,7 +93,7 @@
           <td>{{u.cellPhone}} </td>
           <td>{{u.userName}} </td>
           <td style="color: rgb(18, 218, 18);"><b>{{u.status}}</b> </td>      
-          <td><!-- <a class="close-icon acciones" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a> -->
+          <td><a class="close-icon acciones" (click)="updateUser(u)" ><i class="fas fa-user-edit"></i></a>
           <a class="close-icon" (click)="removeUser(u._id)"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
       </tbody>

@@ -66,3 +66,9 @@ transform: scale(1.1);
     margin-right: 30px;
 }
 
+.title{
+    color:rgb(100, 172, 94);
+    border-bottom: 2px solid rgba(74, 149, 67, 0.678);
+    width: 60%;
+}
+

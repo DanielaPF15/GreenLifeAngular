@@ -19,8 +19,10 @@ export class UserService {
     return this.http.post<User>(`${this.apiURL}/login`, formData)
   }
 
-  getAll(){
-    return this.http.get(`${this.apiURL}/user/getAll`)
+  getAll(filter){
+    return this.http.get(`${this.apiURL}/user/getAll${filter}`)
+    //localhots:300//user/getAll?searchBy==hghgh
+
   }
 
   updateUser(formData, idUser){
@@ -30,5 +32,9 @@ export class UserService {
   deleteUser(id){
     return this.http.delete(`${this.apiURL}/user/deleteOne/${id}`)
   }
+
+
+
+
 }
 

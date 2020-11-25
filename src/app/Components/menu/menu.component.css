@@ -84,3 +84,13 @@
     margin-right: 20px;
     cursor: pointer;
 }
+.close-icon{
+    color: rgb(77, 180, 46);
+    size: 5px;
+    justify-content: flex-end;
+    margin-left: 5%;
+}
+.usu{
+    color: rgb(47, 56, 46);
+    margin-left: 20%;
+}

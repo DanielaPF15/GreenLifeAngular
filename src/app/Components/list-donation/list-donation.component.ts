@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationService } from '../../Services/donation.service';
-import { StorageService } from '../../Services/storage.service';
 import { Router } from '@angular/router';
 const swal = require('sweetalert')
 
@@ -12,17 +11,19 @@ const swal = require('sweetalert')
 export class ListDonationComponent implements OnInit {
 
   allDonations: any;
+  search: String;
 
   constructor(
     private donationService: DonationService,
-    private route: Router
+    private route: Router,
   ) { }
 
   ngOnInit(): void {
-    this.getAll()
+    //this.getAll()
+    this.loadDonation()
   }
 
-  getAll() {
+  /*getAll() {
     this.donationService.getAll().subscribe(
       (donations) => {
         this.allDonations = donations
@@ -31,7 +32,7 @@ export class ListDonationComponent implements OnInit {
         console.log('Error ->', error)
       }
     )
-  }
+  }*/
 
   updateDonation(donation) {
     localStorage.setItem(`donation-${donation._id}`, JSON.stringify(donation))
@@ -52,6 +53,18 @@ export class ListDonationComponent implements OnInit {
       },
       (error) => {
         console.log('Erro al eliminar una donación', error)
+      }
+    )
+  }
+
+  loadDonation(){
+    const filter = (typeof this.search == 'string' && this.search.length > 0) ? `?searchBy=${this.search}`: ''
+    this.donationService.getAll(filter).subscribe(
+      (donations) =>{
+        this.allDonations = donations
+      },
+      (error) =>{
+        console.error('Error ->', error)
       }
     )
   }
