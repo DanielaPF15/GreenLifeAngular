@@ -1,5 +1,5 @@
 
-.container h1{
+.container-fluid h1{
     text-align: center;
     width: 60%;
     margin-left: 20%;
@@ -10,13 +10,72 @@
     font-family: cursive;
 }
 
-.container{
-    width: 75%;
+.container-fluid{
+    display: flex;
 }
+
+.container-form{
+    width: 60%;
+}
+
+.container-perfil{
+    width: 40%;
+   
+}
+
+.container-perfil img{
+    border-radius: 125px;
+    
+}
+.container-perfil a{
+    text-decoration: none;
+}
+
+.enlace{
+    color: white;
+}
+
+.enlace:hover{
+    color: blue;
+}
+
+.imagen-update{
+    width: 50%;
+    height: 256px;
+    border: 2px rgb(11, 158, 11) solid;
+    margin-left: 30%;
+    margin-top: 15%;
+    padding-top: 15px;
+}
+
+
 
 .container button{
     width: 25%;
     margin-bottom: 20px;
-    margin-left: 75%;
+    margin-left: 38%;
+    transition: 0.9 s;
 }
-    
+
+.container button:hover{
+    transform: scale(1.1);
+}
+
+.col-sm-11{
+    border-radius: 10px;
+}
+
+
+.card{
+    transition: 1 s;
+    background-color:  rgba(11, 158, 11, 0.287);
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.subir-foto{
+    margin-left: 42% !important;
+}
+  
