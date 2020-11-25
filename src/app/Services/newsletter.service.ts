@@ -22,4 +22,7 @@ export class NewsletterService {
   deleteNewsletter(idnews){
     return this.http.delete(`${this.apiURL}/newsletters/deleteOne/${idnews}`)
   }
+  updateNewsletter(formData, idNews){
+    return this.http.put<Newsletter>(`${this.apiURL}/newsletters/update/${idNews}`, formData)
+  }
 }

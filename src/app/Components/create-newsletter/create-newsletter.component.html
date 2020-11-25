@@ -28,7 +28,8 @@
         </button>
       </div>
       <h1>Publicaciones</h1>
-     <div class="formulari"> <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
+     <div class="formulari"> 
+       <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
         <div class="form">
           <div class="form-group col-6">
 
@@ -40,9 +41,9 @@
         <div class="form">
           <div class="form-group col-6">
 
-            <input formControlName="description" id="description"
+            <textarea formControlName="description" id="description"
               type="text-area"
-              class="form-control" placeholder="Descripción">
+              class="form-control " placeholder="Descripción"></textarea>
           </div>
         </div>
         <div class="form">
@@ -69,8 +70,6 @@
         <th scope="col">Título</th>
         <th scope="col">Descripción</th>
         <th scope="col">Fecha</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Evidencia</th>
         <th scope="col">Acciones</th>
 
       </tr>
@@ -80,9 +79,9 @@
         <th scope="row">{{n.title}}</th>
         <td >{{n.description}}</td>
         <td>{{n.date}}</td>
-        <td>{{n.status}}</td>
-        <td></td>
-        <td><a class="btn btn-secondary" (click)="removeNewsletter(n._id)">X</a></td>
+        <td>
+          <a class="modificar-enlace close-icon" (click)="updateNewsletter(n)"><i class="fas fa-user-edit"></i></a>
+          <a class="close-icon" (click)="removeNewsletter(n._id)"><i class="fas fa-trash-alt"></i></a></td>
       </tr>
     </tbody>
   </table>
