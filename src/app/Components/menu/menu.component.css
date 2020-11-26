@@ -15,6 +15,7 @@
     min-width: 200px;
 }
 
+
 .fa-facebook{
     font-size: 3rem;
     color: blue;
@@ -85,7 +86,7 @@
     cursor: pointer;
 }
 .close-icon{
-    color: rgb(77, 180, 46);
+    color: rgb(72, 172, 238);
     size: 5px;
     justify-content: flex-end;
     margin-left: 5%;

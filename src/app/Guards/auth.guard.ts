@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
       const infoUser = this.storageService.dataUser();
       if ((infoUser.role == 'Admin' && route.data.only == 'Admin') || !route.data.only) {
         return true
-      } if((infoUser.role == 'Voluntario' && route.data.only =='Voluntario') || !route.data.only){
+      } else if (route.data.only.includes(infoUser.role)){
         return true
       }else{
         swal({

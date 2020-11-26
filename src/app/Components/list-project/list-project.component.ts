@@ -3,6 +3,7 @@ import { ProjectService } from '../../Services/project.service'
 import { Router} from '@angular/router'
 import { CategoryService } from '../../Services/category.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StorageService} from '../../Services/storage.service';
 const swal = require('sweetalert')
 
 
@@ -18,13 +19,21 @@ export class ListProjectComponent implements OnInit {
   allCategory: any
   categoryProject: Array<any> = []
   categoryForm: FormGroup
+  roleUser: Boolean = false
+
   constructor(
     private projectService: ProjectService,
     private router: Router,
     private categoryService: CategoryService,  
     private formBuilder: FormBuilder,
+    private storageService: StorageService,
 
-  ) { }
+  ) {
+    let dataUser = this.storageService.dataUser()
+    if (dataUser.role == 'Admin'){
+      this.roleUser = true
+    }
+   }
 
   ngOnInit(): void {
     this.getAll()
@@ -52,7 +61,11 @@ export class ListProjectComponent implements OnInit {
     if(this.createProjectForm.valid){
       this.projectService.createProject(this.createProjectForm.value).subscribe(
         (proyectcreated)=>{
-          alert('El Proyecto se creo correctamente')
+          swal({
+            title: "Hecho!",
+            text: "Proyecto creado correctamente!",
+            icon: "success",
+          });
           this.router.navigateByUrl('/', { skipLocationChange: true } ).then(
             () => {
               this.router.navigate(['/list-project'])
@@ -64,7 +77,11 @@ export class ListProjectComponent implements OnInit {
         }
       )
     } else{
-      alert('Todos los campos debes estar llenos')
+      swal({
+        title: "Error!",
+        text: "Todos los campos debes estar diligenciados",
+        icon: "error",
+      });
     }
   }
 
@@ -157,7 +174,11 @@ export class ListProjectComponent implements OnInit {
       )
 
     }else{
-      alert('Todos los campos debes estar llenos')
+      swal({
+        title: "Error!",
+        text: "Todos los campos deben estar diligenciados!",
+        icon: "error",
+      });
     }
 
   }

@@ -30,24 +30,26 @@
   </div>
 </div>
 </div> -->
-
-
-<div class="container-fluid" >
+<div class="container-fluid">
   <div class="container container-perfil">
     <img src="assets/images/perfil.png" class="imagen-update">
-    <button class="btn btn-success mt-2 subir-foto" style="text-align: center;" >Subir foto</button>
-    
-   <div class="card col-sm-11 ml-5">
+    <button class="btn btn-success mt-2 subir-foto" style="text-align: center;">Subir
+      foto</button>
+
+    <div class="card col-sm-11 ml-5">
       <div class="card-body text-center">
         <h6>
-          Apartado de actualizar tu datos personales,para aplicarlo debes dar clic en guardar
-          y la proxima vez que inicies sesion debes hacerlo con tus nuevos datos.
+          Apartado de actualizar tu datos personales,para aplicarlo debes dar
+          clic en guardar
+          y la proxima vez que inicies sesion debes hacerlo con tus nuevos
+          datos.
         </h6>
-        <h6><a href="/list-newsletter" class="enlace">Nuevas publicaciones <i class="far fa-arrow-alt-circle-right"></i></a>
+        <h6><a href="/list-newsletter" class="enlace">Nuevas publicaciones <i
+              class="far fa-arrow-alt-circle-right"></i></a>
         </h6>
       </div>
     </div>
-   <!--  <div class="card mt-3 col-sm-6">
+    <!--  <div class="card mt-3 col-sm-6">
       <div class="card-body text-center">
         <h5>
           Bienvenido al apartado de actualizar tu datos personales,para aplicarlo debes dar clic en guardar
@@ -56,77 +58,72 @@
         <a href="/list-newsletter">Ver nuevas publicaciones <i class="far fa-arrow-alt-circle-right"></i></a>
       </div>
     </div> -->
-
-    </div>
-<div class="container container-form">
+  </div>
+  <div class="container container-form">
     <h1>Actualizar Usuario</h1>
-    <form [formGroup]="createUserForm" (ngSubmit)="saveUser()" >
+    <form [formGroup]="createUserForm" (ngSubmit)="saveUser()">
 
-        <div class="form-row" >
-            <div class="form-group col-md-6" >
-              <label><b>Nombre:</b></label>
-              <input formControlName="name" id="name" type="text" class="form-control" >
-            </div>
-            <div class="form-group col-md-6" >
-              <label><b>Apellido:</b></label>
-              <input formControlName="lastName" id="lastName" type="text" class="form-control" >
-            </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label><b>Nombre:</b></label>
+          <input formControlName="name" id="name" type="text"
+            class="form-control">
         </div>
-        
-        <div class="form-row" >
-          <div class="form-group col-md-12" >
-            <label><b>Numero Celular:</b></label>
-            <input formControlName="cellPhone" id="cellPhone" type="text" class="form-control" >
-          </div>
+        <div class="form-group col-md-6">
+          <label><b>Apellido:</b></label>
+          <input formControlName="lastName" id="lastName" type="text"
+            class="form-control">
         </div>
-       
-
-        <div class="form-row" >
-            <div class="form-group col-md-6" >
-              <label><b>Email:</b></label>
-              <input formControlName="email" id="email" type="email" class="form-control" >
-            </div>
-            <div class="form-group col-md-6" >
-              <label><b>Ciudad:</b></label>
-              <input formControlName="city" id="city" type="text" class="form-control" >
-            </div>
-        </div>
-
-        <div class="form-row" >
-          <div class="form-group col-md-12" >
-            <label><b>Nombre Usuario:</b></label>
-            <input formControlName= "userName" id="userName" type="text" class="form-control" >
-          </div>
       </div>
-     
 
-        <div class="form-row" >
-            <div class="form-group col-md-12" >
-              <label><b>Numero Celular:</b></label>
-              <input formControlName="cellPhone" id="cellPhone" type="text" class="form-control" >
-            </div>
-            <!-- <div class="form-group col-md-12" >
-                <label><b>Estado:</b></label>
-                <input formControlName="status" id="status" type="text" class="form-control" >
-              </div> -->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label><b>Numero Celular:</b></label>
+          <input formControlName="cellPhone" id="cellPhone" type="text"
+            class="form-control">
         </div>
+      </div>
 
-        <!-- <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="password"><b>Contraseña:</b></label>
-              <input formControlName="password" id="password" type="password" required class="form-control"
-              class="form-control" >
-              <div *ngIf="updateUserForm.get('password').error?.minlength">
-                <p class="text-danger">La contraseña debe tener minimo 6 caracteres</p>
-                </div>
-            </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label><b>Email:</b></label>
+          <input formControlName="email" id="email" type="email"
+            class="form-control">
         </div>
+        <div class="form-group col-md-6">
+          <label><b>Ciudad:</b></label>
+          <input formControlName="city" id="city" type="text"
+            class="form-control">
+        </div>
+      </div>
 
-        <div class="form-row" *ngIF="!updateUserForm.valid"></div> -->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label><b>Nombre Usuario:</b></label>
+          <input formControlName="userName" id="userName" type="text"
+            class="form-control">
+        </div>
+      </div>
+      <div *ngIf="roleUser">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <p>Si no quiere cambiar la contraseña deja el campo vacio</p>
+          <label for="password"><b>Contraseña:</b></label>
+          <input formControlName="password" id="password" type="password"
+            required class="form-control"
+            class="form-control">
+          <div *ngIf="createUserForm.get('password').errors?.minlength">
+            <p class="text-danger">La contraseña debe tener minimo 6 caracteres</p>
+          </div>
+        </div>
+      </div>
+     </div>
 
-        <button class="btn btn-lg btn-info" style="text-align: center;" >Guardar</button>
-        
+      <div class="form-row" *ngIF="!createUserForm.valid"></div>
+
+      <button class="btn btn-lg btn-info" style="text-align: center;">Guardar</button>
     </form>
   </div>
-  
+
 </div>

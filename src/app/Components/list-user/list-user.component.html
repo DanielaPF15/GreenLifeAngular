@@ -26,13 +26,7 @@
 <div>
   <div class="container mt-5 mb-5">
     <div class="buscar-titulo">
-      <h2 class="title">Informacion de usuarios</h2>
-      <div class="col-5">
-        <input class="form-control mr-sm-2" type="search" placeholder="Nombre voluntario" aria-label="Search"
-        (keyup)="loadUser()" [(ngModel)]="search"
-        >
-        <!-- <button class="btn btn-outline-success my-2 my-sm-0">Search</button> -->
-      </div>
+      <h2 class="title text-center mb-2">Informacion de usuarios</h2>
     </div>
       <div class="row" style="display: flex; justify-content: center;">
           <div style="width: 50%;display: flex; justify-content: center; border-right: 1px solid #ccc;">
@@ -54,17 +48,29 @@
                   <div class="card-body">
                       <h5 class="card-title"
                           style="font-family: 'Raleway', sans-serif; color:rgb(26, 98, 167); font-weight: bold;">
-                        Buscador
+                        Buscador Usuario
                         </h5>
                       <p class="card-text">
-                        En la parte superior a este cuadro encontraras el buscador de usuarios, 
-                        este te facilitara la busqueda de estos en la lista.
+                        En la parte inferior central a este cuadro encontraras el buscador de usuarios, 
+                        este te facilitara la busqueda  en la lista.
                       </p>
                      
                   </div>
               </div>
           </div>
+          
       </div>
+      <div class="buscar container text-center mt-5">
+        <label class="center mt-2" style="font-family: 'Raleway', sans-serif; color: green; font-weight: bold;">Buscar Usuario: </label>
+        <div class="col-7">
+          <input class="form-control mr-sm-2" type="search" placeholder="Nombre voluntario" aria-label="Search"
+          (keyup)="loadUser()" [(ngModel)]="search"
+          >
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0">Search</button> -->
+        </div>
+      </div>
+    
+
   </div>
 </div>
 

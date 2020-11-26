@@ -34,8 +34,9 @@ export class MenuComponent implements OnInit {
   }
 
   updateUser(user){
-    localStorage.setItem(`user-${user._id}`, JSON.stringify(user) )
-    this.router.navigate([`/update-user/${user._id}`])
+    let dataUser = this.storageService.dataUser();
+    localStorage.setItem(`user-${dataUser.sub}`, JSON.stringify(user) )
+    this.router.navigate([`/update-user/${dataUser.sub}`])
   }
 
   /* getAll(){

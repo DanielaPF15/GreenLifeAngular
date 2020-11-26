@@ -1,155 +1,162 @@
-
-<div class="container m-5">
-  <!--Boton-->
-  <div class="col">
-    <div class="card" style="width: 13.5rem;">
-      <div class="card-body">
-        <p class="card-text">Crea un nuevo proyecto</p>
-        <button type="button" class="btn btn-info" data-toggle="modal"
-          data-target=".bd-example-modal">Nuevo proyecto..</button>
+<div *ngIf="roleUser">
+  <div class="container">
+    <!--Boton-->
+    <div class="col">
+      <div class="card" style="width: 16rem;">
+        <div class="card-body">
+          <!--  <p class="card-text"></p> -->
+          <button  type="button" class="btn btn-info m-2" data-toggle="modal"
+            data-target=".bd-example-modal">Crear nuevo proyecto...</button>
+            
+          <button type="button" class="btn btn-info m-2" data-toggle="modal"
+            data-target=".bd-example-cate">Crear nueva categoria...</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!--boton-->
+    <!--boton-->
     <!--modal-->
     <div class="modal fade bd-example-modal p-5" tabindex="-1"
-    role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
-    <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
-      <div class="modal-content text-center"> <!--contenido del modal-->
-        <div class="modal-header"><!--cabeza de modal-->
-          <h5 class="modal-title"
-            id="myModalLabel">
-            Crear Proyecto
-          </h5>
-          <button type="button" class="close"
-            data-dismiss="modal">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <form [formGroup]="createProjectForm" (ngSubmit)="saveProject()">
-  
-          <div class="form">
+      role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
+      <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
+        <div class="modal-content text-center"> <!--contenido del modal-->
+          <div class="modal-header"><!--cabeza de modal-->
+            <h5 class="modal-title"
+              id="myModalLabel">
+              Crear Proyecto
+            </h5>
+            <button type="button" class="close"
+              data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <form [formGroup]="createProjectForm" (ngSubmit)="saveProject()">
+
+            <div class="form">
               <div class="form-group col-md-12 pt-3">
                 <input formControlName="name" id="name" type="text"
                   class="form-control" placeholder="Nombre Proyecto">
               </div>
-      
+
               <div class="form-group col-md-12">
                 <input formControlName="theme" id="theme" type="text"
                   class="form-control" placeholder="Tema">
               </div>
-      
-              <div class="form-group col-md-12 ">
+
+              <div class="form-group col-md-12">
                 <textarea formControlName="description" id="description"
                   class="form-control" placeholder="Descripción"></textarea>
               </div>
-      
+
               <div class="form-group col-md-12">
                 <input formControlName="city" id="city" type="text"
                   class="form-control" placeholder="Ciudad">
               </div>
-      
+
               <div class="form-group col-md-12">
                 <input formControlName="address" id="address" type="text"
                   class="form-control" placeholder="Dirección">
               </div>
-              
+
               <div class="form-group col-md-12">
                 <label>Fecha de inicio</label>
                 <input formControlName="startDate" id="startDate" type="date"
                   class="form-control">
               </div>
-      
-      
+
+
               <div class="form-group col-md-12">
                 <label>Fecha de fin</label>
                 <input formControlName="endDate" id="endDate" type="date"
                   class="form-control">
               </div>
-              
-      
+
+
               <div class="form-group col-md-12">
-                <input formControlName="totalPeople" id="totalPeople" type="text"
+                <input formControlName="totalPeople" id="totalPeople"
+                  type="text"
                   class="form-control" placeholder="Total de personas">
               </div>
-      
-      
+
+
               <div class="form-row p-3">
                 <div class="form-group col-md-12">
                   <label>Categoria del proyecto</label>
-                  <input formControlName="category" id="category" class="form-control"
+                  <input formControlName="category" id="category"
+                    class="form-control"
                     type="hidden">
                   <div class="row">
                     <div class="col" *ngFor="let c of allCategory">
-                      <input type="checkbox" value="{{c._id}}" (click)="saveCategory($event)">
+                      <input type="checkbox" value="{{c._id}}"
+                        (click)="saveCategory($event)">
                       <ul>{{c.name}}</ul>
                     </div>
                   </div>
                 </div>
               </div>
-              <button class="btn btn-lg btn-info " onClick="$('.modal').modal('hide');">Guardar proyecto</button>
-  
+              <button class="btn btn-lg btn-info mb-4"
+                onClick="$('.modal').modal('hide');">Guardar proyecto</button>
             </div>
-            </form>
-      
+          </form>
+
+        </div>
       </div>
+
     </div>
-  
-  </div>
-  
+
     <!--modal-->
-  
 
+    <!--Botoncategory-->
 
-
-   <!--Botoncategory-->
-   <div class="col p-2">
-    <div class="card" style="width: 18rem;">
+    <!--  <div class="col p-2">
+    <div class="card" style="width: 14rem;">
       <div class="card-body">
         <p class="card-text">Crea una nueva Categoría</p>
         <button type="button" class="btn btn-info" data-toggle="modal"
-          data-target=".bd-example-cate">Nueva...</button>
+          data-target=".bd-example-cate">Nueva categoria...</button>
       </div>
     </div>
-  </div>
-  <!--botoncategory-->
-  <!--modal-->
-  <div class="modal fade bd-example-cate p-5" tabindex="-1"
-  role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
-  <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
-    <div class="modal-content text-center"> <!--contenido del modal-->
-      <div class="modal-header"><!--cabeza de modal-->
-        <h5 class="modal-title"
-          id="myModalLabel">
-          Crear Categoría
-        </h5>
-        <button type="button" class="close"
-          data-dismiss="modal">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <form [formGroup]="categoryForm"  (ngSubmit)="newCategory()">
-        <div class="form-row" >
-            <div class="form-group col-md-12" >
-              <label>Nombre</label>
-              <input formControlName="name" id="name" type="text" class="form-control" >
+  </div> -->
+    <!--botoncategory-->
+    <!--modal-->
+    <div class="modal fade bd-example-cate p-5" tabindex="-1"
+      role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
+      <div class="modal-dialog modal-sm"> <!--clase del modal que indica que es un modal grande-->
+        <div class="modal-content text-center"> <!--contenido del modal-->
+          <div class="modal-header"><!--cabeza de modal-->
+            <h5 class="modal-title"
+              id="myModalLabel">
+              Crear Categoría
+            </h5>
+            <button type="button" class="close"
+              data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <form [formGroup]="categoryForm" (ngSubmit)="newCategory()">
+            <div class="form-row text-center">
+              <div class="form-group col-md-12 p-3">
+                <label>Nombre</label>
+                <input formControlName="name" id="name" type="text"
+                  class="form-control text-center">
+              </div>
             </div>
+            <button class="btn btn-lg btn-info mb-2"
+              onClick="$('.modal').modal('hide');">Guardar</button>
+          </form>
+
         </div>
-        <button class="btn btn-lg btn-info" onClick="$('.modal').modal('hide');">Guardar</button>
-    </form>
-    
+      </div>
+
     </div>
+
+    <!--modal-->
   </div>
-
 </div>
-
-  <!--modal-->
-
   <div class="buscar-titulo">
-    <h2 class="title">Proyectos Creados</h2>
+    <h2 class="title text-center">Proyectos Creados</h2>
   </div>
   <table class="table table-striped">
     <thead class="bg-info text-light">
@@ -173,15 +180,17 @@
         <td>{{p.city}}</td>
         <td>{{p.address}}</td>
         <td>{{p.startDate}}</td>
-       <td>{{p.endDate}}</td>
-       <td>{{p.totalPeople}}</td>
-       <td>{{p.status}}</td>
-       <td>{{p.category.name}}</td>
-       <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i class="fas fa-user-edit"></i></a>
-           <a class="close-icon" (click)="removeProject(p._id)"><i class="fas fa-trash-alt"></i></a>
+        <td>{{p.endDate}}</td>
+        <td>{{p.totalPeople}}</td>
+        <td>{{p.status}}</td>
+        <td>{{p.category.name}}</td>
+        <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i
+              class="fas fa-user-edit"></i></a>
+          <a class="close-icon" (click)="removeProject(p._id)"><i class="fas
+              fa-trash-alt"></i></a>
         </td>
-      
+
       </tr>
     </tbody>
   </table>
-</div>
+
