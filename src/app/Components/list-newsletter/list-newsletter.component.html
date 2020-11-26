@@ -1,36 +1,21 @@
 <div class="container-fluid">
   <div class="jumbotron bg-img">
-      <h2> Bienvenido a</h2>
-      <h2> GreenLife</h2>
-      </div>
+    <h2> Bienvenido a</h2>
+    <h2> GreenLife</h2>
   </div>
-<div class="container p-2 mt-4 mb-4" style="background-color: rgb(255, 255,
-  255);">
- 
-  <div class="container bcontent">
-    <h2>Publicaciones</h2>
-    
-    <div class="col mt-5 p-2" *ngFor="let n of allnewsletter">
+</div>
+<div class="container">
+  <h2>Publicaciones</h2>
+  <div class="row">
+  <div class="col-6 p-2 cards" *ngFor="let n of allnewsletter">
       <div class="card" style="width: 700px;">
-        <div class="row align-items-center no-gutters">
-          <div class="col-sm-3">
-            <img class="img-card " src="assets/images/ayuda.png">
-          </div>
-          <div class="col-sm-6">
-            <div class="card-body">
-              <h5 class="card-title">Titulo: {{n.title}}</h5>
-              <p class="card-text"><b>Descripción: </b> {{n.description}} </p>
-              <p><b>Fecha: </b> {{n.date}}</p>
-            </div>
-            </div>
-            <div class="col-sm-2">
-              <a href="#" class="btn btn-info">Comentar</a>
-    
-            </div>
+        <h5 class="card-header ">Titulo: {{n.title}}</h5>
+        <div class="card-body">
+          <p class="card-text"><b>Descripción: </b> {{n.description}} </p>
+          <p><b>Fecha: </b> {{n.date}}</p> <a class="btn btn-info">Comentar</a>
+          <img src="assets/images/Logo.png" class="img-fluid" width="250">
         </div>
-        
-        
       </div>
-    </div>
   </div>
+</div>
 </div>
