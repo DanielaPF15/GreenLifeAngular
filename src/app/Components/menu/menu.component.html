@@ -56,10 +56,8 @@
       </ul>
       <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <a class="material-icons close-icon" (click)="updateUser()" style="font-size: 25px;">settings</a>
-
+      <!-- <span class="material-icons close-icon" (click)="updateUser(user)"  style="font-size: 25px;">settings</span> -->
       <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
-
     </div>
   </nav>
 </div>
@@ -91,7 +89,7 @@
       </ul>
       <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <a class="material-icons close-icon" (click)="updateUser()" style="font-size: 25px;">settings</a>
+      <span class="material-icons close-icon" (click)="updateUser(user)" style="font-size: 25px;">settings</span>
       <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
     </div>
   </nav>

@@ -44,7 +44,7 @@ const routesApp: Routes = [
   {path: 'update-donation/:id', canActivate: [AuthGuard], data: {only: 'Admin'}, component: UpdateDonationComponent},
   {path: 'list-newsletter', canActivate: [AuthGuard], component: ListNewsletterComponent},
   {path: 'list-user' ,  canActivate: [AuthGuard], data: {only: 'Admin'}, component: ListUserComponent},
-  {path: 'update-user/:id' ,  canActivate: [AuthGuard], data: {only: 'Admin'}, component: UpdateUserComponent},
+  {path: 'update-user/:id' ,  canActivate: [AuthGuard], data: {only: ['Admin','Voluntario']}, component: UpdateUserComponent},
   {path: 'news-index' , component: NewsIndexComponent},
   {path: 'update-project/:id', canActivate: [AuthGuard], data: {only: 'Admin'}, component: UpdateProjectComponent},
   {path: 'about-us' , component: AboutUsComponent},

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../Services/user.service';
+import { StorageService} from '../../Services/storage.service'
 const swal = require('sweetalert')
 
 @Component({
@@ -13,13 +14,20 @@ export class UpdateUserComponent implements OnInit {
 
   createUserForm: FormGroup
   idUser: String
+  roleUser: Boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private route: Router,
-    private routeParams: ActivatedRoute
+    private routeParams: ActivatedRoute,
+    private storageService: StorageService
   ) {
+    let dataUser = this.storageService.dataUser()
+    if (dataUser.role == 'Voluntario'){
+      this.roleUser = true
+    }
+
     this.validator()
    }
 
@@ -36,7 +44,7 @@ export class UpdateUserComponent implements OnInit {
       city: [dataUser.city, Validators.required],
       cellPhone: [dataUser.cellPhone, Validators.required],
       userName: [dataUser.userName, Validators.required],
-      password: [dataUser.password, Validators.required],
+      password: ['nocambiocontra'],
       role: [dataUser.role, Validators.required],
       status: [dataUser.status, Validators.required],
     })
@@ -46,13 +54,27 @@ export class UpdateUserComponent implements OnInit {
     if (this.createUserForm.valid){
       this.userService.updateUser(this.createUserForm.value, this.idUser).subscribe(
         (usercreated) => {
-          swal({
-            title: "Excelente!",
-            text: "Usuario modificado correctamente!",
-            icon: "success",
-          }) 
-
-          this.route.navigate(['/list-user'])
+          
+          let dataUser = this.storageService.dataUser()
+          if (dataUser.role ==  'Admin'){
+            
+            swal({
+              title: "Excelente!",
+              text: "Modificado correctamente!",
+              icon: "success",
+            }) 
+            this.route.navigate(['/list-user'])
+           
+          } else {
+            swal({
+              title: "Excelente!",
+              text: "Modificado correctamente!",
+              icon: "success",
+            }) 
+           
+            this.route.navigate(['/'])
+          }
+          
         },
         (error) => {
           console.error('Error -> ', error)
