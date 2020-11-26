@@ -51,14 +51,14 @@
           <a class="nav-link" routerLink="/list-donation">Donaciones</a>
         </li>
         <li>
-          <a class="nav-link" >Lista Usuarios</a>
+          <a class="nav-link"  routerLink="/list-user" >Lista Usuarios</a>
         </li>
       </ul>
       <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <a class="material-icons close-icon" (click)="updateUser()">settings</a>
+      <a class="material-icons close-icon" (click)="updateUser()" style="font-size: 25px;">settings</a>
 
-      <span class="material-icons close-icon" (click)="destroySession()">exit_to_app</span>
+      <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
 
     </div>
   </nav>
@@ -91,8 +91,8 @@
       </ul>
       <span class="navbar-text usu"> <b>Bienvenido a Greenlife {{user.name}}!</b>
       </span>
-      <a class="material-icons close-icon" (click)="updateUser()">settings</a>
-      <span class="material-icons close-icon" (click)="destroySession()">exit_to_app</span>
+      <a class="material-icons close-icon" (click)="updateUser()" style="font-size: 25px;">settings</a>
+      <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
     </div>
   </nav>
 </div>

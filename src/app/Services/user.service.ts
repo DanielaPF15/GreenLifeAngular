@@ -22,7 +22,6 @@ export class UserService {
   getAll(filter){
     return this.http.get(`${this.apiURL}/user/getAll${filter}`)
     //localhots:300//user/getAll?searchBy==hghgh
-
   }
 
   updateUser(formData, idUser){

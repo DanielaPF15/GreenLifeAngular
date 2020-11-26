@@ -25,7 +25,7 @@ export class ListUserComponent implements OnInit {
     this.loadUser()
   }
 
-  /*getAll(){
+  /* getAll(){
     this.userService.getAll().subscribe(
       (users) => {
          this.allUsers = users
@@ -35,7 +35,7 @@ export class ListUserComponent implements OnInit {
         console.error('Error -> ', error)
       }
     )
-  }*/
+  } */
 
   updateUser(user){
     localStorage.setItem(`user-${user._id}`, JSON.stringify(user) )
@@ -74,9 +74,8 @@ export class ListUserComponent implements OnInit {
       }, (error) =>{
         console.error('Error ->', error)
       }
-
     )
-  
+    console.log(this.allUsers)
   }
 
 }
