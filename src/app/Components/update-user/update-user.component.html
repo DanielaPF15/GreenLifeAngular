@@ -127,7 +127,7 @@
           <input formControlName="password" id="password" type="password"
             required class="form-control"
             class="form-control">
-          <div *ngIf="createUserForm.get('password').error?.minlength">
+          <div *ngIf="createUserForm.get('password').errors?.minlength">
             <p class="text-danger">La contraseña debe tener minimo 6 caracteres</p>
           </div>
         </div>
