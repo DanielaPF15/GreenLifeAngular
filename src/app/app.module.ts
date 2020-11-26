@@ -35,7 +35,7 @@ const routesApp: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'login' , component: LoginComponent},
   {path: 'create-project', canActivate: [AuthGuard], component: CreateProjectComponent},
-  {path: 'list-project', canActivate: [AuthGuard], component: ListProjectComponent},
+  {path: 'list-project', canActivate: [AuthGuard], data: {only: ['Admin','Voluntario']},component: ListProjectComponent},
   {path: 'create-donation', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateDonationComponent},
   {path: 'create-category', canActivate: [AuthGuard], data: {only: 'Admin'}, component: CreateCategoryComponent },
   {path: 'create-experiences', canActivate: [AuthGuard], data: {only: 'Voluntario'}, component: CreateExperiencesComponent },

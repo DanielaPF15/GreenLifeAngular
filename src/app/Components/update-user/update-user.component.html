@@ -105,24 +105,10 @@
             class="form-control">
         </div>
       </div>
-
-      <!-- <div *ngIf="roleUser">
-      <div class="form-row" >
-        <div class="form-group col-md-12" >
-          <p>Si no quiere cambiar la contraseña deja el campo vacio</p>
-          <label for="password"><b>Contraseña</b></label>
-          <input formControlName= "password" id="password" type="password" class="form-control" >
-        <div *ngIf="updateUserForm.get('password').errors?.minlength">
-          <p class="text-danger"> La contraseña debe terner minimos 6 caracteres</p>
-        </div>
-        </div>
-      </div>
-
-      <div class="form-row" *ngIf="!updateUserForm.valid"></div> -->
-      
-
+      <div *ngIf="roleUser">
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
+          <p>Si no quiere cambiar la contraseña deja el campo vacio</p>
           <label for="password"><b>Contraseña:</b></label>
           <input formControlName="password" id="password" type="password"
             required class="form-control"
@@ -132,6 +118,7 @@
           </div>
         </div>
       </div>
+     </div>
 
       <div class="form-row" *ngIF="!createUserForm.valid"></div>
 

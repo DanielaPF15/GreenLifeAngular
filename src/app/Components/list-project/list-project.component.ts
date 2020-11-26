@@ -3,6 +3,7 @@ import { ProjectService } from '../../Services/project.service'
 import { Router} from '@angular/router'
 import { CategoryService } from '../../Services/category.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StorageService} from '../../Services/storage.service';
 const swal = require('sweetalert')
 
 
@@ -18,13 +19,21 @@ export class ListProjectComponent implements OnInit {
   allCategory: any
   categoryProject: Array<any> = []
   categoryForm: FormGroup
+  roleUser: Boolean = false
+
   constructor(
     private projectService: ProjectService,
     private router: Router,
     private categoryService: CategoryService,  
     private formBuilder: FormBuilder,
+    private storageService: StorageService,
 
-  ) { }
+  ) {
+    let dataUser = this.storageService.dataUser()
+    if (dataUser.role == 'Admin'){
+      this.roleUser = true
+    }
+   }
 
   ngOnInit(): void {
     this.getAll()
