@@ -24,7 +24,7 @@
 
 <div>
     <div class="container mt-5 mb-5">
-        <h2 class="title">Donaciones registradas</h2>
+        <h2 class="title text-center">Donaciones registradas</h2>
         <div class="row" style="display: flex; justify-content: center;">
             <div style="width: 50%;display: flex; justify-content: center; border-right: 1px solid #ccc;">
                 <div class="card" style="width: 24rem; border: none;">
@@ -69,15 +69,13 @@
 </div>
 
 <div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-3">
-            <p>Buscar donación</p>
-        </div>
-        <div class="col-9">
+    <div class="buscar container text-center mt-5 mb-4">
+        <label class="center mt-2" style="font-family: 'Raleway', sans-serif; color: green; font-weight: bold;">Buscar Donacion: </label>
+        <div class="col-7">
             <input type="search" aria-label="Search" placeholder="Buscar" class="form-control mb-4" (keyup)="loadDonation()" [(ngModel)]="search">
         </div>
     </div>
-    <table class="table table-bordered">
+    <table class="table">
         <thead class="bg-info text-light">
             <tr>
                 <th scope="col">Entidad</th>

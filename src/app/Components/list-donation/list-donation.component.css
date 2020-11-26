@@ -1,5 +1,5 @@
 .title{
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     color:rgb(41, 163, 30);
     border-bottom: 2px solid rgba(74, 149, 67, 0.678);
     padding-bottom: 10px;
@@ -14,4 +14,12 @@
 .fa-trash-alt{
     color: rgb(240, 27, 27);
     font-size: 20px;
+}
+
+.buscar{
+    display: flex;
+}
+
+.center{
+margin-left: 15%;
 }
