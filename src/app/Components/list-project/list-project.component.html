@@ -2,11 +2,14 @@
 <div class="container m-5">
   <!--Boton-->
   <div class="col">
-    <div class="card" style="width: 13.5rem;">
+    <div class="card" style="width: 16rem;">
       <div class="card-body">
-        <p class="card-text">Crea un nuevo proyecto</p>
-        <button type="button" class="btn btn-info" data-toggle="modal"
-          data-target=".bd-example-modal">Nuevo proyecto..</button>
+       <!--  <p class="card-text"></p> -->
+        <button type="button" class="btn btn-info m-2" data-toggle="modal"
+          data-target=".bd-example-modal">Crear nuevo proyecto...</button>
+
+          <button type="button" class="btn btn-info m-2" data-toggle="modal"
+          data-target=".bd-example-cate">Crear nueva categoria...</button>
       </div>
     </div>
   </div>
@@ -89,7 +92,7 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-lg btn-info " onClick="$('.modal').modal('hide');">Guardar proyecto</button>
+              <button class="btn btn-lg btn-info mb-4" onClick="$('.modal').modal('hide');">Guardar proyecto</button>
   
             </div>
             </form>
@@ -100,26 +103,24 @@
   </div>
   
     <!--modal-->
-  
-
-
 
    <!--Botoncategory-->
-   <div class="col p-2">
-    <div class="card" style="width: 18rem;">
+
+  <!--  <div class="col p-2">
+    <div class="card" style="width: 14rem;">
       <div class="card-body">
         <p class="card-text">Crea una nueva Categoría</p>
         <button type="button" class="btn btn-info" data-toggle="modal"
-          data-target=".bd-example-cate">Nueva...</button>
+          data-target=".bd-example-cate">Nueva categoria...</button>
       </div>
     </div>
-  </div>
+  </div> -->
   <!--botoncategory-->
   <!--modal-->
   <div class="modal fade bd-example-cate p-5" tabindex="-1"
   role="dialog" aria-labelledby="myLargeModalLabel"
   aria-hidden="true"><!-- aria lbellledby es para el tamaño del modal -->
-  <div class="modal-dialog modal-lg"> <!--clase del modal que indica que es un modal grande-->
+  <div class="modal-dialog modal-sm"> <!--clase del modal que indica que es un modal grande-->
     <div class="modal-content text-center"> <!--contenido del modal-->
       <div class="modal-header"><!--cabeza de modal-->
         <h5 class="modal-title"
@@ -132,13 +133,13 @@
         </button>
       </div>
       <form [formGroup]="categoryForm"  (ngSubmit)="newCategory()">
-        <div class="form-row" >
-            <div class="form-group col-md-12" >
+        <div class="form-row text-center" >
+            <div class="form-group col-md-12 p-3" >
               <label>Nombre</label>
-              <input formControlName="name" id="name" type="text" class="form-control" >
+              <input formControlName="name" id="name" type="text" class="form-control text-center" >
             </div>
         </div>
-        <button class="btn btn-lg btn-info" onClick="$('.modal').modal('hide');">Guardar</button>
+        <button class="btn btn-lg btn-info mb-2" onClick="$('.modal').modal('hide');">Guardar</button>
     </form>
     
     </div>
