@@ -6,20 +6,31 @@
 }
 
 .fa-user-edit{
-    color: rgb(43, 139, 230);
-    font-size: 20px;
-    margin-right: 10px;
+    color: rgb(71, 157, 238);
+    font-size: 25px;
 }
 
 .fa-trash-alt{
-    color: rgb(240, 27, 27);
-    font-size: 20px;
+    color: red;
+    font-size: 25px;
 }
 
 .buscar{
     display: flex;
 }
 
+.acciones{
+    margin-right: 30px;
+}
+
 .center{
 margin-left: 15%;
+}
+
+.movimiento{
+    transition: 0.7s;
+}
+
+.movimiento:hover{
+transform: scale(1.1);
 }
