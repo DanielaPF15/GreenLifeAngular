@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '../../Services/category.service';
 import { ProjectService } from '../../Services/project.service';
+const swal = require('sweetalert')
 
 @Component({
   selector: 'app-create-project',
@@ -47,14 +48,22 @@ export class CreateProjectComponent implements OnInit {
     if(this.createProjectForm.valid){
       this.projectService.createProject(this.createProjectForm.value).subscribe(
         (proyectcreated)=>{
-          alert('El Proyecto se creo correctamente')
+          swal({
+            title: "Hecho!",
+            text: "Proyecto creado correctamente!",
+            icon: "success",
+          });
         }, (error)=>{
           console.error('Error', error)
 
         }
       )
     } else{
-      alert('Todos los campos debes estar llenos')
+      swal({
+        title: "Error!",
+        text: "Todos los campos deben estar diligenciados",
+        icon: "error",
+      });
     }
   }
 

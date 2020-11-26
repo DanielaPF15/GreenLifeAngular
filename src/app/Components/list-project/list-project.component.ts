@@ -61,7 +61,11 @@ export class ListProjectComponent implements OnInit {
     if(this.createProjectForm.valid){
       this.projectService.createProject(this.createProjectForm.value).subscribe(
         (proyectcreated)=>{
-          alert('El Proyecto se creo correctamente')
+          swal({
+            title: "Hecho!",
+            text: "Proyecto creado correctamente!",
+            icon: "success",
+          });
           this.router.navigateByUrl('/', { skipLocationChange: true } ).then(
             () => {
               this.router.navigate(['/list-project'])
@@ -73,7 +77,11 @@ export class ListProjectComponent implements OnInit {
         }
       )
     } else{
-      alert('Todos los campos debes estar llenos')
+      swal({
+        title: "Error!",
+        text: "Todos los campos debes estar diligenciados",
+        icon: "error",
+      });
     }
   }
 
@@ -166,7 +174,11 @@ export class ListProjectComponent implements OnInit {
       )
 
     }else{
-      alert('Todos los campos debes estar llenos')
+      swal({
+        title: "Error!",
+        text: "Todos los campos deben estar diligenciados!",
+        icon: "error",
+      });
     }
 
   }
