@@ -1,6 +1,7 @@
-<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
+<!-- <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="50">
   <source src="assets/images/Pelican.mp4" type="video/mp4"/>
-  </video>
+  </video> -->
+  <img src="assets/images/water-lily.jpg" alt="">
   <div class="tittle">
   <h4>Aqui podrás crear algún proyecto que tengas en mente y <br> en el cual puedas contribuir
      con el medio ambiente!!!!!</h4>
@@ -104,4 +105,40 @@
     </div>
   </div>
 
+</div>
+<div class="container mb-5">
+  <div class="buscar-titulo">
+  <h2 class="title text-center">Proyectos Creados</h2>
+</div>
+
+<table class="table table-striped ">
+  <thead class="bg-info text-light">
+    <tr>
+      <th scope="col">Proyecto</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Inicio</th>
+      <th scope="col">Fin</th>
+      <th scope="col">Total personas</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Categoría</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of allProjects" class="movimiento">
+      <th scope="row">{{p.name}}</th>
+      <td>{{p.description}}</td>
+      <td>{{p.city}}</td>
+      <td>{{p.address}}</td>
+      <td>{{p.startDate}}</td>
+      <td>{{p.endDate}}</td>
+      <td>{{p.totalPeople}}</td>
+      <td>{{p.status}}</td>
+      <td>{{p.category.name}}</td>
+     
+      </tr>
+  </tbody>
+</table>
 </div>
