@@ -28,7 +28,6 @@ export class CreateExperiencesComponent implements OnInit {
   ) {
     this.getProject();
     this.validator();
-    let dataUser = this.storageService.dataUser();
    }
 
   ngOnInit(): void {
@@ -41,7 +40,7 @@ export class CreateExperiencesComponent implements OnInit {
       name: [dataUser.name, Validators.required],
       project: ['', Validators.required],
       description: ['', Validators.required],
-      evidence: ['', Validators.required],
+      evidence: [null],
       user: [dataUser.sub, Validators.required]
     });
   }
@@ -115,6 +114,11 @@ export class CreateExperiencesComponent implements OnInit {
         console.error('Error -> ', error);
       }
     );
+  }
+
+  updateExperience(experience){
+    localStorage.setItem(`experience-${experience._id}`, JSON.stringify(experience) )
+    this.route.navigate([`/update-experience/${experience._id}`])
   }
 
 }
