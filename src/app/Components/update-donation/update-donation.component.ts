@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DonationService } from '../../Services/donation.service';
-import { ProjectService } from '../../Services/project.service';
 const swal = require('sweetalert')
 
 @Component({
@@ -15,18 +14,16 @@ export class UpdateDonationComponent implements OnInit {
   createDonationForm: FormGroup;
   idDonation: String;
   allProject: any
-  projectDonation: Array<any> = []
   
 
   constructor(
     private formBuilder:FormBuilder,
     private donationService: DonationService,
-    private projectService: ProjectService,
     private router: Router,
     private routeParams: ActivatedRoute
 
   ) {
-    this.getProject()
+    //this.getProject()
     this.validator()
   }
 
@@ -40,7 +37,7 @@ export class UpdateDonationComponent implements OnInit {
 
     this.createDonationForm = this.formBuilder.group({
       entity: [dataDonation.entity],
-      project: [this.projectDonation],
+      project: [dataDonation.project],
       user: [dataDonation.user],
       description: [dataDonation.description],
       value: [dataDonation.value, Validators.required],
@@ -64,7 +61,7 @@ export class UpdateDonationComponent implements OnInit {
     }
   }
 
-  getProject(){
+  /*getProject(){
     this.projectService.getAll().subscribe(
       (projects) => {
         this.allProject = projects
@@ -90,6 +87,6 @@ export class UpdateDonationComponent implements OnInit {
     }
 
     this.createDonationForm.get('project').setValue(valueInput)
-  }
+  }*/
 
 }
