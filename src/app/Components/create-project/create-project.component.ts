@@ -57,6 +57,12 @@ export class CreateProjectComponent implements OnInit {
             text: "Proyecto creado correctamente!",
             icon: "success",
           });
+          this.router.navigateByUrl('/', { skipLocationChange: true } ).then(
+            () => {
+              this.router.navigate(['/create-project'])
+            }
+          )
+
         }, (error)=>{
           console.error('Error', error)
 

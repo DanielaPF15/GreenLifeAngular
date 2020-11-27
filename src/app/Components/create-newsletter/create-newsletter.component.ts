@@ -75,9 +75,9 @@ export class CreateNewsletterComponent implements OnInit {
     this.newsletterService.deleteNewsletter(news_id).subscribe(
       (newsDeleted)=>{
         swal({
-          title: "Ok!",
-          text: "Se elimino correctamente!",
-          icon: "warning",
+          title: "Proceso correcto!",
+          text: "Se elimino publicación una publicacion!",
+          icon: "success",
         }) 
 
         this.route.navigateByUrl('/', { skipLocationChange: true } ).then(
