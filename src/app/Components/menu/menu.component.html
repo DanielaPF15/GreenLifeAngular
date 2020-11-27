@@ -1,6 +1,6 @@
 <div *ngIf="!user">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand"><img src="assets/images/Logo.png"  routerLink="/" width="80%"></a>
+        <a class="navbar-brand"><img src="assets/images/Logo.png" routerLink="/" width="80%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
       navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,35 +30,35 @@
 
 <div *ngIf="user && user.role == 'Admin'">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%"  routerLink="/"></a>
+        <a class="navbar-brand"><img src="assets/images/Logo.png" width="80%" routerLink="/"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
       navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/create-newsletter">Publicaciones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list-project">Proyectos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list-donation">Donaciones</a>
-        </li>
-        <li>
-          <a class="nav-link"  routerLink="/list-user" >Usuarios</a>
-        </li>
-      </ul>
-      <span class="navbar-text usu">Bienvenido {{user.name}} 🍃!</span>
-      
-      <!-- <span class="material-icons close-icon" (click)="updateUser(user)"  style="font-size: 25px;">settings</span> -->
-      <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
-    </div>
-  </nav>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create-newsletter">Publicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/list-project">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/list-donation">Donaciones</a>
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="/list-user">Usuarios</a>
+                </li>
+            </ul>
+            <span class="navbar-text usu">Bienvenido {{user.name}} 🍃!</span>
+
+            <!-- <span class="material-icons close-icon" (click)="updateUser(user)"  style="font-size: 25px;">settings</span> -->
+            <span class="material-icons close-icon" (click)="destroySession()"><i class="fas fa-sign-in-alt" style="font-size: 25px;"></i></span>
+        </div>
+    </nav>
 </div>
 
 <div *ngIf="user && user.role == 'Voluntario'">

@@ -62,7 +62,7 @@
 <!--modal-->
 <!--tabla-->
 <div class="container mt-5">
-  <h2 class="title">Publicaciones Creadas</h2>
+  <h2 class="title text-center">Publicaciones Creadas</h2>
 
   <table class="table table-striped">
     <thead class="bg-info text-light" >
@@ -71,16 +71,15 @@
         <th scope="col">Descripción</th>
         <th scope="col">Fecha</th>
         <th scope="col">Acciones</th>
-
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let n of allnewsletter"class="movimiento">
         <th scope="row">{{n.title}}</th>
-        <td >{{n.description}}</td>
+        <td>{{n.description}}</td>
         <td>{{n.date}}</td>
         <td>
-          <a class="modificar-enlace close-icon" (click)="updateNewsletter(n)"><i class="fas fa-user-edit"></i></a>
+          <a class="acciones close-icon" (click)="updateNewsletter(n)"><i class="fas fa-user-edit"></i></a>
           <a class="close-icon" (click)="removeNewsletter(n._id)"><i class="fas fa-trash-alt"></i></a></td>
       </tr>
     </tbody>
