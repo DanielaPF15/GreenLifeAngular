@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '../../Services/category.service';
 import { ProjectService } from '../../Services/project.service';
+import { Router} from '@angular/router';
 const swal = require('sweetalert')
 
 @Component({
@@ -14,14 +15,17 @@ export class CreateProjectComponent implements OnInit {
   createProjectForm: FormGroup
   allCategory: any
   categoryProject: Array<any> = []
+  allProjects : any;
 
   constructor(
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private router: Router,
   ) {
     this.getCategory()
     this.validator()
+    this.getAll()
    }
 
   ngOnInit(): void {
@@ -94,5 +98,17 @@ export class CreateProjectComponent implements OnInit {
     }
 
     this.createProjectForm.get('category').setValue(valueInput)
+  }
+  getAll(){
+    this.projectService.getAll().subscribe(
+      (projects) => {
+         this.allProjects = projects
+         console.log(this.allProjects)
+      },
+
+      (error) => {
+        console.error('Error -> ', error)
+      }
+    )
   }
 }

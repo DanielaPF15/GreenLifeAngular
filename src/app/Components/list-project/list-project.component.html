@@ -155,10 +155,23 @@
     <!--modal-->
   </div>
 </div>
-  <div class="buscar-titulo">
+
+<!-- <div class="col p-2">
+  <div class="card" style="width: 14rem;">
+    <div class="card-body">
+      <p class="card-text">Crea un nuevo proyecto</p>
+      <button type="button" class="btn btn-info" data-toggle="modal"
+        data-target=".bd-example-modal">Nuevo proyecto...</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-5 mb-5">
+    <div class="buscar-titulo">
     <h2 class="title text-center">Proyectos Creados</h2>
   </div>
-  <table class="table table-striped">
+  
+  <table class="table table-striped ">
     <thead class="bg-info text-light">
       <tr>
         <th scope="col">Proyecto</th>
@@ -184,13 +197,10 @@
         <td>{{p.totalPeople}}</td>
         <td>{{p.status}}</td>
         <td>{{p.category.name}}</td>
-        <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i
-              class="fas fa-user-edit"></i></a>
-          <a class="close-icon" (click)="removeProject(p._id)"><i class="fas
-              fa-trash-alt"></i></a>
-        </td>
-
-      </tr>
+        <td><a class="modificar-enlace close-icon" (click)="updateProject(p)"><i class="fas fa-user-edit"></i></a>
+          <a class="close-icon" (click)="removeProject(p._id)"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
     </tbody>
   </table>
+  </div>
 

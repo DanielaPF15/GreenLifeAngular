@@ -1,34 +1,38 @@
 body{
     margin: 0%;
+ 
 }
-video{
+img{
     position: absolute;
-    bottom: 0px;
     right: 0px;
     min-width: 100%;
-    min-height: 100%;
-    width: auto;
+    min-height: 50%;
+    width: 100%;
     height: auto;
     z-index: -1;
     overflow: hidden;
+    
 
 }
-#video_pattern {
-    background:#fff;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+
 
 .card{
     background-color: rgba(212, 241, 241, 0.582);
     border-radius: 8px;
-    margin: 10% 0% 20% 40%;
+    margin: 10% 0% 20% 70%;
     height: 100%;
 }
 .tittle{
-    text-align: center;
-    margin-top: 5%;
+    text-align: right;
+    margin-top: 5% ;
+    margin-right: 5%;
     color: whitesmoke;
+}
+.title{
+    color:rgb(100, 172, 94);
+    border-bottom: 2px solid rgba(74, 149, 67, 0.678);
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 60px;
+    
 }
