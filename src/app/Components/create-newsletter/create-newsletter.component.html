@@ -3,7 +3,7 @@
 <div class="col">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <p class="card-text">Realiza una nueva publicación</p>
+      <p class="card-text text-center">Realiza una nueva publicación</p>
       <button type="button" class="btn btn-info" data-toggle="modal"
         data-target=".bd-example-modal">Nueva publicación..</button>
     </div>
@@ -29,7 +29,7 @@
       </div>
       <h1>Publicaciones <img src="assets/images/Logo.png" class="img-fluid" width="150">
       </h1>
-     <div class="formulari"> 
+     <div class="formulario"> 
        <form [formGroup]="createNewsletterForm" (ngSubmit)="saveNewsletter()">
         <div class="form">
           <div class="form-group col-12">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="form">
-          <div class="form-group col-12 ml-3">
+          <div class="form-group col-12">
 
             <textarea formControlName="description" id="description"
               type="text-area"
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="form">
-          <div class="form-group col-12 ml-3">
+          <div class="form-group col-12">
             <label>Fecha</label>
             <input formControlName="date" id="date" type="date"
               class="form-control">
