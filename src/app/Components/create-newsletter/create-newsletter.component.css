@@ -19,14 +19,22 @@
 transform: scale(1.1);
 }
 
-.formulario{
-    display: flex;
-    justify-content: center;
+.form{
+padding:2% !important;
 }
 
 .fa-trash-alt{
     color: red;
     font-size: 25px;
+}
+
+.card{
+    margin-top: 3%;
+    margin-left: 37%;
+}
+
+.card-body button{
+    margin-left: 16%;
 }
 
 .fa-user-edit{
